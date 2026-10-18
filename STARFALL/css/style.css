@@ -1,0 +1,441 @@
+:root{--bg:#050817;--panel:#091326;--panel2:#0d1c33;--line:#123b5c;--cyan:#37d8ff;--blue:#168bff;--purple:#b45cff;--text:#e8f5ff;--muted:#7e9bb5;--red:#ff466b;--green:#56ffb0;--gold:#ffc76b}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body,#app,button,.screen,.upgrade-row,.ship-card,.menu-card,.game-bottom,.hud{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:'Rajdhani','Arial Narrow',sans-serif}body{background:radial-gradient(ellipse at 50% 0%,#101c4b 0,#050817 56%);min-height:100dvh}button,select{font:inherit;color:inherit}button{cursor:pointer;touch-action:manipulation}#app{max-width:1100px;margin:auto;min-height:100dvh;border-left:1px solid #0d2941;border-right:1px solid #0d2941}.topbar{height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid var(--line);background:#050b19ed;position:sticky;top:0;z-index:5}.brand{display:flex;align-items:center;gap:10px}.brand-mark{font-size:30px;color:var(--cyan);text-shadow:0 0 14px var(--cyan)}.brand b{display:block;font:800 17px Orbitron,'Arial Narrow',sans-serif;letter-spacing:2px}.brand small{display:block;font:10px Orbitron,'Arial Narrow',sans-serif;letter-spacing:2px;color:var(--muted);margin-top:3px}.top-actions{display:flex;align-items:center;gap:9px}.top-actions span,.coin-inline{font:600 12px Orbitron;color:var(--gold)}.icon-btn{width:35px;height:35px;background:#0a1a2e;border:1px solid #1a537a;border-radius:8px;color:var(--cyan);font-size:19px}.screen{display:none;padding:18px;min-height:calc(100dvh - 66px)}.screen.active{display:block}.hero{max-width:680px;margin:auto;text-align:center;padding:36px 10px 20px;overflow:hidden}.eyebrow{font:600 10px Orbitron;letter-spacing:3px;color:var(--cyan)}h1{font:800 clamp(34px,8vw,62px)/1.13 Orbitron;margin:17px 0 12px;letter-spacing:-2px}h1 span{color:var(--cyan);text-shadow:0 0 25px #138fff80}.hero p{color:#a3bad0;max-width:420px;margin:0 auto 10px;font-size:17px}.hero-ship{height:200px;display:grid;place-items:center;position:relative}.hero-ship:before{content:"";position:absolute;width:210px;height:150px;border-radius:50%;background:#167fff20;filter:blur(35px)}.hero-ship img{height:175px;filter:drop-shadow(0 0 20px #22baff90);animation:float 3s ease-in-out infinite;position:relative}@keyframes float{50%{transform:translateY(-9px)}}.primary,.secondary,.danger{border-radius:8px;padding:13px 17px;font:700 12px Orbitron;letter-spacing:1px;border:1px solid}.primary{background:linear-gradient(100deg,#087dff,#12cfff);border-color:#65e8ff;color:#001322;box-shadow:0 0 20px #168bff30}.secondary{background:#0a1729;border-color:#1a4566;color:#b7d9ed}.danger{background:#351123;border-color:#7c2343;color:#ff91a9}.wide{width:100%;max-width:430px}.home-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:28px auto 18px;max-width:620px}.menu-card{background:linear-gradient(145deg,#0d2037,#07101f);border:1px solid var(--line);border-radius:10px;padding:17px 6px;display:flex;flex-direction:column;align-items:center;gap:7px}.menu-card span{font-size:24px;color:var(--cyan)}.menu-card b{font:600 10px Orbitron}.menu-card small{font-size:12px;color:var(--muted)}.tiny{font:9px Orbitron!important;letter-spacing:1.4px;color:#4c6a82!important;margin-top:24px!important}.section-head{display:flex;align-items:center;gap:13px;margin:4px 0 20px}.section-head .backBtn{width:38px;height:38px;border:1px solid var(--line);background:#0a1729;border-radius:8px;font-size:21px;color:var(--cyan)}.section-head small{font:10px Orbitron,'Arial Narrow',sans-serif;color:var(--cyan);letter-spacing:2px}.section-head h2{font:700 19px Orbitron;margin:5px 0 0}.section-head .coin-inline{margin-left:auto}.ship-preview{display:flex;align-items:center;gap:18px;padding:18px;border:1px solid var(--line);background:linear-gradient(130deg,#0e2340,#07101d);border-radius:12px;margin-bottom:15px}.ship-preview img{height:105px;width:100px;object-fit:contain;filter:drop-shadow(0 0 10px #24baff70)}.ship-preview small{font:10px Orbitron,'Arial Narrow',sans-serif;color:var(--cyan);letter-spacing:1px}.ship-preview h3{font:700 22px Orbitron;margin:7px 0}.ship-preview p{color:var(--muted);margin:0 0 9px}.ship-preview b{font:11px Orbitron;color:var(--gold)}.ship-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ship-card{display:flex;align-items:center;gap:10px;padding:11px;background:#081427;border:1px solid #12334e;border-radius:9px;text-align:left;min-width:0}.ship-card.selected{border-color:var(--cyan);box-shadow:inset 0 0 0 1px #37d8ff30}.ship-card img{width:48px;height:54px;object-fit:contain}.ship-card b{display:block;font:600 10px Orbitron}.ship-card small{color:var(--muted);font-size:12px}.subhead{font:600 12px Orbitron;letter-spacing:1px;margin:24px 0 10px}.upgrade-list,.settings-card{border:1px solid var(--line);border-radius:10px;background:#081427;padding:14px;margin-bottom:12px}.upgrade-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #122941}.upgrade-row:last-child{border-bottom:0}.upgrade-row b,.setting-line b{display:block;font-weight:700}.upgrade-row small,.setting-line small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.buy-btn{background:#0b2940;color:var(--cyan);border:1px solid #1b7196;border-radius:6px;padding:9px 10px;font:600 10px Orbitron;white-space:nowrap}.buy-btn:disabled{opacity:.35}.meter{display:flex;gap:3px;margin-top:8px}.meter i{height:4px;flex:1;background:#152c40;border-radius:4px}.meter i.on{background:var(--cyan);box-shadow:0 0 6px #37d8ff70}.settings-card label{display:block;font:600 11px Orbitron;letter-spacing:1px;margin-bottom:10px;color:#a6cce5}.settings-card select{width:100%;background:#0c1b2f;border:1px solid #1a4566;border-radius:7px;padding:12px}.bg-swatches{display:flex;gap:9px;margin-top:13px}.swatch{height:29px;flex:1;border:2px solid #3c5670;border-radius:6px}.swatch:focus,.swatch.active{outline:2px solid white;outline-offset:2px}.violet{background:linear-gradient(130deg,#29106d,#a13dd6)}.blue{background:linear-gradient(130deg,#061c56,#27cfff)}.ember{background:linear-gradient(130deg,#380b17,#ff6c22)}.emerald{background:linear-gradient(130deg,#003e42,#56ff9d)}.mono{background:linear-gradient(130deg,#050817,#60738a)}.setting-line{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #142b42}.setting-line:last-child{border:0}.setting-line input{accent-color:var(--cyan);width:19px;height:19px}.muted{color:var(--muted);font-size:14px}.file-label{display:block;margin:12px 0;padding:12px;border:1px solid #1a4566;border-radius:7px;text-align:center;color:var(--cyan);font:600 11px Orbitron!important;cursor:pointer}.file-label input{display:none}.settings-card .danger{width:100%}.manual h3{font:600 12px Orbitron;color:var(--cyan);margin:8px 0}.manual p{line-height:1.5;color:#aac1d4;margin:6px 0 18px}.cyan{color:var(--cyan)}.green{color:var(--green)}.purple{color:var(--purple)}.orange{color:#ff9e42}.game-screen{padding:0;position:relative;min-height:calc(100dvh - 66px);background:#030611;display:none;flex-direction:column}.game-screen.active{display:flex}.hud{display:flex;justify-content:space-around;padding:10px 5px;background:#061020;border-bottom:1px solid var(--line);z-index:1}.hud div{display:flex;flex-direction:column;gap:4px}.hud small{font:9px Orbitron;color:var(--muted)}.hud b{font:600 12px Orbitron;color:var(--cyan)}#hpText{color:#8dffb5;letter-spacing:.4px;white-space:nowrap}.health-hud{min-width:115px!important}.health-line{display:flex;flex-direction:column;gap:5px!important}.health-track{height:8px;width:100%;min-width:72px;background:#281421;border:1px solid #7d344d;border-radius:6px;overflow:hidden}.health-track i{display:block;width:100%;height:100%;background:linear-gradient(90deg,#32d878,#a6ff79);border-radius:6px;transition:width .15s linear}.health-track i.warning{background:linear-gradient(90deg,#ffad43,#ffe36b)}.health-track i.critical{background:linear-gradient(90deg,#ff315f,#ff7b5e)}#gameCanvas{display:block;width:100%;height:min(68dvh,760px);object-fit:contain;touch-action:none;background:#050817}.game-controls{display:flex;justify-content:center;gap:12px;padding:10px 12px;background:#050b18}.game-controls button{height:43px;flex:1;max-width:130px;background:#0b1c31;border:1px solid #1d5b80;border-radius:8px;color:var(--cyan);font:700 13px Orbitron;touch-action:none}.game-controls #fireBtn{background:#0c2b40;color:#83edff}.game-bottom{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;color:#597991;font:9px Orbitron;letter-spacing:.4px}.game-bottom button{padding:7px 9px;font-size:9px}.boss-bar{position:absolute;top:59px;left:8%;right:8%;z-index:2;pointer-events:none;padding:7px 9px;background:#080d1ddd;border:1px solid #64253a;border-radius:8px;box-shadow:0 0 16px #ff315522}.boss-bar-labels{display:flex;justify-content:space-between;align-items:center;gap:8px}.boss-bar-labels span{font:10px Orbitron,'Arial Narrow',sans-serif;color:#ff9aaa;text-shadow:0 0 6px #ff345f}.boss-bar-labels span:last-child{color:#ffe1e7;text-shadow:none;white-space:nowrap}.boss-bar-track{height:9px;background:#40111d;border:1px solid #a62b4b;margin-top:6px;border-radius:6px;overflow:hidden}.boss-bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#ff345f,#ffb04b);transition:width .12s linear}.hidden{display:none!important}.modal{position:fixed;inset:0;background:#02050bd9;display:grid;place-items:center;z-index:10;padding:20px}.modal-box,.result-panel{width:min(100%,390px);background:linear-gradient(145deg,#10233c,#060d1b);border:1px solid #236086;border-radius:14px;padding:25px;text-align:center;box-shadow:0 0 40px #007bff22}.modal h2,.result-panel h2{font:700 22px Orbitron;margin:12px 0 24px}.modal button,.result-panel button{margin-top:10px}.result-screen{display:grid;place-items:center}.result-panel .eyebrow{margin-bottom:10px}.result-stat{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #1b3149;font:11px Orbitron}.result-stat b{color:var(--gold)}.toast{position:fixed;top:calc(env(safe-area-inset-top, 0px) + 74px);bottom:auto;left:50%;transform:translate(-50%,-12px);opacity:0;background:#0d2840ee;border:1px solid #31cfff;color:#dffaff;padding:10px 15px;border-radius:8px;font:11px Orbitron;z-index:30;transition:opacity .2s,transform .2s;pointer-events:none;max-width:min(92%,520px);width:max-content;text-align:center;box-shadow:0 5px 20px #0008}.toast.show{opacity:1;transform:translate(-50%,0)}@media(min-width:700px){.hero{padding-top:50px}.home-grid{gap:15px}.screen:not(.game-screen){padding:26px}.ship-list{grid-template-columns:repeat(3,minmax(0,1fr))}.game-screen{max-width:620px;margin:auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}}@media(max-width:380px){.screen{padding:12px}.topbar{padding:0 11px}.brand b{font-size:14px}.home-grid{gap:6px}.menu-card b{font-size:9px}.hud small{font-size:8px}.hud b{font-size:10px}.ship-preview{padding:12px;gap:9px}.ship-preview img{width:75px}.ship-list{gap:6px}.ship-card{padding:8px 6px}.ship-card img{width:38px}}
+
+/* Starfall expansion: rarity tiers, collectibles, missions and compact touch controls */
+.ship-card{transition:transform .12s ease,border-color .12s ease;position:relative}
+.ship-card:active{transform:scale(.98)}
+.ship-card small.ship-ability{color:#c1d7ed;font-size:10px;margin-top:4px}
+.rarity-common{border-color:#31506b}
+.rarity-normal{border-color:#368a9a}
+.rarity-special{border-color:#8a59bc}
+.rarity-epic{border-color:#bb58cf;box-shadow:inset 0 0 14px #a642cf12}
+.rarity-legendary{border-color:#d7a64c;box-shadow:inset 0 0 15px #ffc76b16}
+.rarity-legendary b{color:#ffda83}
+.mission-row{display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:center;padding:12px 0;border-bottom:1px solid #142b42}
+.mission-row:last-child{border-bottom:0}
+.mission-row b{font:600 11px Orbitron}
+.mission-row span{color:var(--muted);font-size:12px;text-align:right}
+.mission-row button{grid-column:1/-1;background:#0b2940;color:var(--cyan);border:1px solid #1b7196;border-radius:6px;padding:8px;font:600 10px Orbitron}
+.mission-row button:disabled{opacity:.4}
+.achievement-note{margin-top:14px;padding:12px;background:#0c1b2e;border-radius:8px;color:#c6d7e7;font-size:12px;line-height:1.5}
+.game-controls{gap:6px;padding:8px 7px}
+.game-controls button{min-width:0;padding:0 4px;font-size:clamp(9px,2.6vw,13px)}
+.game-controls #dashBtn,.game-controls #abilityBtn{background:#15152f;border-color:#684da3;color:#d5baff}
+#gameCanvas{touch-action:none;overscroll-behavior:contain}
+@media(max-width:390px){.game-controls{gap:4px;padding:7px 4px}.game-controls button{height:42px;font-size:9px}.ship-card img{width:34px;height:44px}.ship-card b{font-size:9px}.ship-card small{font-size:10px}}
+
+/* Mobile controls and safe-area refinements */
+.game-screen{padding-bottom:env(safe-area-inset-bottom)}
+.game-controls{position:relative;z-index:3;gap:7px;padding:8px max(8px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom));flex-wrap:wrap}
+.game-controls button{position:relative;overflow:hidden;min-width:0;max-width:none;flex:1 1 16%;font-size:clamp(9px,2.7vw,13px)}
+.game-controls button:disabled{opacity:.55}
+.cooldown-ring{position:absolute;inset:3px;border:2px solid #ffc857;border-radius:6px;opacity:.45;pointer-events:none;transform:scaleX(var(--cooldown,0));transform-origin:left}
+#abilityBtn small{display:block;font:9px Orbitron;color:#ffc76b;margin-top:3px}
+.joystick{position:absolute;z-index:4;right:12px;left:auto;bottom:95px;width:108px;height:108px;border-radius:50%;border:2px solid #49dfff88;background:#06162ab8;box-shadow:inset 0 0 20px #168bff20;touch-action:none;display:grid;place-items:center}
+.joystick-knob{width:43px;height:43px;border-radius:50%;background:#2ac9f0aa;border:2px solid #a8f5ff;box-shadow:0 0 14px #1abaff77;pointer-events:none}
+#gameCanvas{touch-action:none}
+@media(max-width:420px){.joystick{width:96px;height:96px;right:10px;left:auto;bottom:102px}.joystick-knob{width:36px;height:36px}.game-controls{gap:5px}.game-controls button{padding:4px 2px;letter-spacing:0}}
+
+/* Requested mobile layout: joystick lower-left; directional and attack buttons removed. */
+.joystick{left:14px;right:auto;bottom:58px}
+@media(max-width:420px){.joystick{left:10px;right:auto;bottom:58px}}
+.ship-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.ship-actions .buy-btn{min-width:88px}
+.ship-actions .buy-btn:disabled{opacity:.45}
+
+/* Follow-up fixes */
+.joystick{right:12px!important;left:auto!important;bottom:95px!important}
+@media(max-width:420px){.joystick{right:10px!important;left:auto!important;bottom:102px!important}}
+.main-menu-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.main-menu-actions #exitBtn{grid-column:1/-1}
+.upgrade-actions{display:flex;gap:6px;align-items:center}.upgrade-actions .buy-btn{flex:1}.reset-upgrade{border:1px solid #a75a68;background:#32131d;color:#ffb9c4;border-radius:6px;padding:9px 8px;font:600 9px Orbitron}
+#accountScreen input[type=text]{width:100%;padding:12px;margin:8px 0 12px;background:#071326;border:1px solid #274761;border-radius:7px;color:#eaf7ff}#accountScreen .wide{margin:5px 0}
+
+.achievement-list{display:grid;gap:9px}.achievement-row{display:grid;grid-template-columns:1fr auto;gap:5px 12px;padding:13px;border:1px solid #28415e;border-radius:9px;background:#0a1628}.achievement-row small{color:#91a8c3}.achievement-row span{font-size:9px;letter-spacing:1px;color:#7e91a8;grid-column:2;grid-row:1/3;align-self:center}.achievement-row.unlocked{border-color:#c7a34e;box-shadow:inset 3px 0 #ffe98a}.achievement-row.unlocked span{color:#ffe98a}.achievement-row.locked{opacity:.72}
+
+.main-menu-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.main-menu-actions #exitBtn{grid-column:1/-1}
+.hidden{display:none!important}
+#joystickToggle{accent-color:#22d3ee;width:20px;height:20px;margin-right:8px}
+
+/* SPCK mobile navigation: keep the first screen clean and isolate lobby UI. */
+body:has(#homeScreen.active) .top-actions{display:none}
+#lobbyScreen .hero{padding-top:24px}
+#accountScreen #accountSelect,#accountScreen #accountName,#accountScreen #accountPassword,#accountScreen #loginName,#accountScreen #loginPassword{display:block;width:100%;margin:8px 0 14px;padding:12px;border-radius:8px;background:#081427;border:1px solid var(--line);color:var(--text)}
+#accountScreen #loadSelectedAccountBtn{margin-bottom:16px}
+@media(max-width:480px){.main-menu-actions{display:flex;flex-direction:column;gap:9px;align-items:center}.main-menu-actions button{min-height:44px}.home-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.screen{padding:12px}}
+
+/* Critical navigation fix: result screen must never render unless active. */
+.screen.result-screen{display:none!important}
+.screen.result-screen.active{display:grid!important}
+
+/* Final hangar and Omega presentation */
+.hangar-pager{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 0;color:#8fdcff;font-size:.75rem;letter-spacing:.08em}
+.hangar-pager button{min-width:88px;padding:9px 10px}
+.ship-stats{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0;color:#aeeaff;font-size:.75rem}
+.ship-stats span{background:rgba(37,128,190,.14);border:1px solid rgba(72,190,255,.22);border-radius:7px;padding:6px 8px}
+.ship-preview{position:relative;isolation:isolate}
+.preview-aura{position:absolute;z-index:-1;width:clamp(110px,34vw,190px);height:auto;object-fit:contain;left:10px;top:50%;transform:translateY(-40%);pointer-events:none;filter:drop-shadow(0 0 12px #ff244f)}
+.rarity-omega{border-color:#ff3458!important;box-shadow:inset 0 0 0 1px rgba(255,52,88,.15)}
+.rarity-omega b{color:#ff7188}
+
+/* Revised Starfall lobby: animated ship showcase and account coin panel */
+.lobby-hero{max-width:760px;padding-top:18px!important}.lobby-heading h2{font:800 clamp(24px,6vw,38px) Orbitron;letter-spacing:1px;margin:10px 0}.lobby-heading h2 span{color:var(--cyan);text-shadow:0 0 20px #168bff70}.lobby-heading p{font-size:13px!important;color:#8faec7!important}.lobby-ship-stage{height:245px;position:relative;display:grid;place-items:center;margin:6px auto 8px;overflow:hidden;border:1px solid #153e5b;border-radius:18px;background:radial-gradient(ellipse at 50% 55%,#0e3c6670 0, #071326 45%,#030916 100%);max-width:570px}.lobby-ship-stage:before{content:"";position:absolute;width:190px;height:130px;border-radius:50%;background:#00aaff26;filter:blur(34px);animation:shipGlow 3s ease-in-out infinite}.lobby-ship-image{position:relative;z-index:2;width:170px;height:170px;object-fit:contain;filter:drop-shadow(0 0 20px #2ccfff8c);animation:lobbyFloat 3.2s ease-in-out infinite}.lobby-ship-aura{position:absolute;z-index:1;width:205px;height:205px;object-fit:contain;opacity:.9;filter:drop-shadow(0 0 18px #ff234b);animation:auraPulse 2.2s ease-in-out infinite}.lobby-orbit{position:absolute;border:1px solid #1c8fc955;border-radius:50%;width:250px;height:88px;transform:rotate(-20deg);animation:orbitGlow 7s linear infinite}.orbit-two{width:285px;height:118px;transform:rotate(26deg);border-color:#56eaff30;animation-direction:reverse}.lobby-ship-label{position:absolute;bottom:12px;left:0;right:0;display:flex;flex-direction:column;gap:4px;z-index:3;text-shadow:0 2px 8px #000}.lobby-ship-label small{font:10px Orbitron,'Arial Narrow',sans-serif;letter-spacing:2px;color:var(--cyan)}.lobby-ship-label b{font:700 15px Orbitron;color:#effaff}.lobby-currency-row{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:570px;margin:12px auto 15px;padding:10px 13px;border:1px solid #1b4966;background:#071527;border-radius:9px;color:#ffdc77;font:600 12px Orbitron}.lobby-currency-row button{padding:9px 12px;font-size:10px}.lobby-hero #playBtn{max-width:570px;min-height:49px;letter-spacing:2px}.lobby-hero .home-grid{margin-top:20px}.achievement-row small{display:block}.achievement-row span{font-size:10px}@keyframes lobbyFloat{0%,100%{transform:translateY(3px) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}@keyframes auraPulse{0%,100%{transform:scale(.94);opacity:.72}50%{transform:scale(1.04);opacity:1}}@keyframes shipGlow{0%,100%{opacity:.55;transform:scale(.9)}50%{opacity:1;transform:scale(1.1)}}@keyframes orbitGlow{to{rotate:360deg}}
+
+/* STARFALLvF final UI updates */
+.account-cards{display:grid;grid-template-columns:1fr;gap:10px;margin:10px 0 16px}
+.account-card{width:100%;display:flex;align-items:center;gap:12px;text-align:left;padding:14px;background:linear-gradient(135deg,#09172a,#071020);border:1px solid #1a4566;border-radius:12px;min-width:0;transition:border-color .18s,box-shadow .18s,background .18s}
+.account-card .account-avatar{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:10px;background:#0d2942;color:#62dfff;font-size:23px}
+.account-info{display:flex;flex-direction:column;gap:5px;min-width:0;flex:1}
+.account-info b{font:700 13px Orbitron,sans-serif;overflow-wrap:anywhere;color:#e9f7ff}
+.account-info small{font:600 11px Orbitron,sans-serif;color:#ffc95e}
+.account-selected{font:600 9px Orbitron,sans-serif;color:#7396b0;white-space:nowrap}
+.account-card.selected{border-color:#47d5ff;background:linear-gradient(135deg,#0d2a48,#0a1b30);box-shadow:0 0 0 1px #43d4ff66,0 0 20px #20bfff35,inset 0 0 20px #168fff14}
+.account-card.selected .account-avatar{background:#0e4264;box-shadow:0 0 14px #25caff55}
+.account-card.selected .account-selected{color:#63e0ff;text-shadow:0 0 8px #25caff88}
+.create-account-form{border:1px solid #1b6c91;border-radius:10px;padding:14px;margin:12px 0;background:#071a2c;box-shadow:0 0 18px #16aaff12}
+#createAccountForm input{width:100%;background:#0b1a2d;border:1px solid #1a5a7e;border-radius:8px;padding:14px;color:#e9f7ff;font-size:15px;margin:0 0 12px}
+#createAccountForm button{margin-top:7px}
+.lobby-currency-row{display:none!important}
+#topSettingsBtn.hidden,#pauseBtn.hidden{display:none!important}
+.game-controls button.skill-tier-epic{border:1px solid #d06bff;color:#f4d6ff;background:linear-gradient(135deg,#24103d,#501477,#170d30);box-shadow:0 0 12px #b13dff55,inset 0 0 12px #d77aff18;animation:epicSkillGlow 2.4s ease-in-out infinite}
+.game-controls button.skill-tier-legendary{border:1px solid #ffd36d;color:#fff0b4;background:linear-gradient(135deg,#3b2608,#765015,#201406);box-shadow:0 0 14px #ffbf3e66,inset 0 0 13px #ffdc771f;animation:legendarySkillGlow 1.8s ease-in-out infinite}
+.game-controls button.skill-tier-omega{border:1px solid #ff3e69;color:#ffe4eb;background:linear-gradient(135deg,#360716,#9c1239,#210611);box-shadow:0 0 17px #ff1f586e,inset 0 0 16px #ff456a30;animation:omegaSkillGlow 1.35s ease-in-out infinite}
+.game-controls button.skill-tier-epic:before,.game-controls button.skill-tier-legendary:before,.game-controls button.skill-tier-omega:before{content:"";position:absolute;inset:-40% -80%;background:linear-gradient(110deg,transparent 35%,#ffffff2a 50%,transparent 65%);transform:translateX(-70%);animation:skillShimmer 3s linear infinite;pointer-events:none}
+.game-controls button.skill-tier-epic:active,.game-controls button.skill-tier-legendary:active,.game-controls button.skill-tier-omega:active{transform:scale(.96);filter:brightness(1.25)}
+@keyframes epicSkillGlow{50%{box-shadow:0 0 20px #b13dff88,inset 0 0 17px #d77aff35}}
+@keyframes legendarySkillGlow{50%{box-shadow:0 0 22px #ffbf3e99,inset 0 0 17px #ffdc7738}}
+@keyframes omegaSkillGlow{50%{box-shadow:0 0 27px #ff1f58b0,inset 0 0 20px #ff456a50}}
+@keyframes skillShimmer{to{transform:translateX(70%)}}
+
+
+/* Final requested mobile lobby layout: all three shortcuts fit on one row. */
+#lobbyScreen .home-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:18px auto 14px}
+#lobbyScreen .menu-card{min-width:0;min-height:94px;padding:12px 3px;gap:6px;overflow:hidden}
+#lobbyScreen .menu-card span{font-size:19px;line-height:1.1}
+#lobbyScreen .menu-card b{font-size:clamp(6px,1.85vw,10px);letter-spacing:0;white-space:nowrap}
+#lobbyScreen .menu-card small{font-size:clamp(8px,2.4vw,11px);white-space:nowrap}
+@media(max-width:380px){#lobbyScreen .home-grid{gap:5px}#lobbyScreen .menu-card{padding:10px 2px;min-height:86px}#lobbyScreen .menu-card b{font-size:6.5px}#lobbyScreen .menu-card small{font-size:8px}}
+/* In gameplay the only top-right action is Pause; Settings and sound stay in lobby. */
+body:has(#gameScreen.active) #topSettingsBtn,body:has(#gameScreen.active) #soundBtn{display:none!important}
+
+/* WARP label and manual achievement claiming */
+.achievement-menu-card{position:relative}
+.achievement-red-dot{position:absolute;right:12px;top:10px;width:11px;height:11px;border-radius:50%;background:#ff304f;box-shadow:0 0 0 3px rgba(255,48,79,.18),0 0 12px rgba(255,48,79,.95);font-style:normal}
+.achievement-red-dot.hidden{display:none!important}
+.achievement-row.ready-to-claim{border-color:rgba(255,76,92,.65);box-shadow:0 0 14px rgba(255,58,82,.12)}
+.claim-achievement{display:inline-flex;align-items:center;justify-content:center;margin-top:8px;padding:7px 12px;border:1px solid #ff687b;border-radius:8px;background:linear-gradient(135deg,#ff3458,#a91d42);color:#fff;font-weight:800;font-size:11px;letter-spacing:.06em;cursor:pointer}
+
+/* Settings: keep joystick toggle beside sound controls; warm gold Warp cooldown indicator. */
+#joystickToggle{accent-color:#ffc857;width:20px;height:20px;margin-right:8px}
+#soundToggle{accent-color:#ffc857}
+.cooldown-ring{border-color:#ffc857!important;box-shadow:0 0 8px #ffc85755}
+
+/* Rank progression UI */
+.account-info .account-rank{color:#68ddff;font-size:10px;letter-spacing:.25px}
+.rank-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:570px;margin:0 auto 12px;padding:10px 13px;border:1px solid #23638a;border-radius:9px;background:linear-gradient(110deg,#0b2440,#081326);box-shadow:0 0 14px #128bff16}
+.rank-summary b{font:700 12px Orbitron,sans-serif;color:#7de8ff;letter-spacing:.6px}
+.rank-summary small{font:600 10px Orbitron,sans-serif;color:#b3cbe0;text-align:right}
+
+
+/* Premium rank title colors and animated badge glow */
+.rank-summary{position:relative;overflow:hidden;transition:border-color .25s,box-shadow .25s,background .25s}
+.rank-summary:before{content:"";position:absolute;inset:-60% -30%;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.10) 48%,transparent 60%);transform:translateX(-65%);animation:rankShimmer 4.5s ease-in-out infinite;pointer-events:none}
+.rank-summary b,.rank-summary small{position:relative;z-index:1}
+.rank-summary .rank-crown{display:inline-block;margin-left:4px;animation:rankSpark 1.8s ease-in-out infinite}
+.rank-summary.rank-level-1{border-color:#9ca3af66;background:linear-gradient(110deg,#263343,#081326);box-shadow:0 0 12px #a8b4c522}
+.rank-summary.rank-level-1 b,.account-rank.rank-level-1{color:#cbd5e1;text-shadow:0 0 8px #94a3b866}
+.rank-summary.rank-level-2{border-color:#38bdf888;background:linear-gradient(110deg,#063b5b,#081326);box-shadow:0 0 18px #38bdf822}
+.rank-summary.rank-level-2 b,.account-rank.rank-level-2{color:#67e8f9;text-shadow:0 0 10px #22d3eeaa}
+.rank-summary.rank-level-3{border-color:#34d39999;background:linear-gradient(110deg,#064e3b,#081326);box-shadow:0 0 20px #34d3992b}
+.rank-summary.rank-level-3 b,.account-rank.rank-level-3{color:#6ee7b7;text-shadow:0 0 11px #10b981aa}
+.rank-summary.rank-level-4{border-color:#c084fcaa;background:linear-gradient(110deg,#4c1d6599,#081326);box-shadow:0 0 22px #c084fc33}
+.rank-summary.rank-level-4 b,.account-rank.rank-level-4{color:#d8b4fe;text-shadow:0 0 12px #a855f7cc}
+.rank-summary.rank-level-5{border-color:#fbbf24;background:linear-gradient(110deg,#78350f99,#27113e,#081326);box-shadow:0 0 25px #f59e0b55, inset 0 0 18px #fbbf2415;animation:commanderAura 2.4s ease-in-out infinite}
+.rank-summary.rank-level-5 b,.account-rank.rank-level-5{color:#fde68a;text-shadow:0 0 7px #f59e0b,0 0 18px #facc15}
+.account-rank{display:block;font-weight:800;transition:color .2s,text-shadow .2s}
+@keyframes rankShimmer{0%,25%{transform:translateX(-75%)}70%,100%{transform:translateX(75%)}}
+@keyframes rankSpark{0%,100%{transform:scale(.9) rotate(-8deg);opacity:.75}50%{transform:scale(1.18) rotate(8deg);opacity:1}}
+@keyframes commanderAura{0%,100%{box-shadow:0 0 18px #f59e0b44,inset 0 0 12px #fbbf2410}50%{box-shadow:0 0 30px #f59e0b88,inset 0 0 22px #fbbf2428}}
+
+/* Achievements have distinct Collector, Warrior and Rank identities */
+.achievement-category-title{padding:11px 13px 7px;margin-top:10px;font:800 12px Orbitron,sans-serif;letter-spacing:1.4px;border-bottom:1px solid #24415d;text-shadow:0 0 12px currentColor}
+.achievement-category-title.warrior{color:#fb7185;border-color:#fb718566}
+.achievement-category-title.collector{color:#67e8f9;border-color:#67e8f966}
+.achievement-category-title.rank{color:#fcd34d;border-color:#fcd34d77}
+.achievement-row{transition:transform .18s,border-color .2s,box-shadow .2s}
+.achievement-row.achievement-warrior.unlocked{border-color:#fb7185;box-shadow:inset 3px 0 #fb7185,0 0 13px #fb71851c}
+.achievement-row.achievement-collector.unlocked{border-color:#67e8f9;box-shadow:inset 3px 0 #67e8f9,0 0 13px #67e8f91c}
+.achievement-row.achievement-rank.unlocked{border-color:#fcd34d;box-shadow:inset 3px 0 #fcd34d,0 0 16px #fcd34d24}
+.achievement-row.achievement-warrior b{color:#fda4af}
+.achievement-row.achievement-collector b{color:#a5f3fc}
+.achievement-row.achievement-rank b{color:#fde68a}
+.achievement-row.ready-to-claim{animation:achievementReadyPulse 2s ease-in-out infinite}
+@keyframes achievementReadyPulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.22)}}
+@media(prefers-reduced-motion:reduce){.rank-summary:before,.rank-crown,.rank-level-5,.achievement-row.ready-to-claim{animation:none!important}}
+/* Compact collapsible achievement panels with category-specific pending dots */
+.achievement-panel{border:1px solid #203b59;border-radius:12px;overflow:hidden;background:linear-gradient(145deg,#09172a,#060d1b);margin:10px 0;box-shadow:0 5px 18px #0002}
+.achievement-panel-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px;background:#0b1930;border:0;border-bottom:1px solid #203b59;text-align:left;font:800 12px Orbitron;letter-spacing:1px}
+.achievement-panel-toggle.warrior{color:#fb7185}.achievement-panel-toggle.collector{color:#67e8f9}.achievement-panel-toggle.rank{color:#fcd34d}
+.achievement-panel-toggle span{display:flex;align-items:center;gap:10px}.achievement-panel-toggle> b{font-size:15px;opacity:.9}
+.category-red-dot{display:none;width:9px;height:9px;border-radius:50%;background:#ff304f;box-shadow:0 0 7px #ff304f,0 0 15px #ff304f88;animation:categoryDotPulse 1s infinite}
+.achievement-panel-toggle.has-pending .category-red-dot{display:inline-block}
+.achievement-panel-content{padding:9px;display:grid;gap:8px}.achievement-panel-content[hidden]{display:none!important}
+.achievement-panel-content .achievement-category-title{display:none}
+.achievement-panel-content .achievement-row{margin:0}
+@keyframes categoryDotPulse{0%,100%{transform:scale(.85);opacity:.8}50%{transform:scale(1.2);opacity:1}}
+.game-controls .ultimate-charge-btn{flex:0 0 clamp(62px,18vw,82px);max-width:82px;height:58px;border-radius:50%;border:2px solid #ffdf39;color:#fff6a0;background:radial-gradient(circle at 50% 35%,#ffbd0b,#f58a00 65%,#5b2600);box-shadow:0 0 12px #ffb700aa,0 0 25px #ffca2866,inset 0 0 8px #fff4a6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;text-shadow:0 1px 3px #6c3400;animation:ultimateButtonGlow 2s ease-in-out infinite}
+.ultimate-charge-btn span{font-size:22px;line-height:22px}.ultimate-charge-btn b{font:800 12px Orbitron;line-height:16px}.game-controls .ultimate-charge-btn.charged{border-color:#fff5a6;box-shadow:0 0 15px #ffdc30,0 0 32px #ffb300aa,inset 0 0 12px #fff7b0;opacity:1}
+.game-controls .ultimate-charge-btn:disabled{opacity:.58;filter:saturate(.55);animation:none}
+@keyframes ultimateButtonGlow{0%,100%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.035);filter:brightness(1.15)}}
+@media(prefers-reduced-motion:reduce){.category-red-dot,.game-controls .ultimate-charge-btn{animation:none!important}}
+
+/* Cinematic rank-promotion reveal */
+.rank-up-modal{z-index:120}.rank-up-box{max-width:360px;text-align:center;border:1px solid #38bdf8;background:radial-gradient(circle at 50% 20%,#123e68 0,#10152f 48%,#070b1b 100%);box-shadow:0 0 28px #38bdf855,inset 0 0 24px #8b5cf622;overflow:hidden}.rank-up-badge{width:86px;height:86px;margin:18px auto 12px;border:2px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:48px;animation:rankBadgePulse 1.2s ease-in-out infinite;box-shadow:0 0 25px currentColor,inset 0 0 20px currentColor}.rank-up-title{font:900 clamp(22px,7vw,32px) Orbitron,sans-serif;letter-spacing:1.5px;margin:12px 0;text-shadow:0 0 12px currentColor,0 0 28px currentColor;animation:rankTitleReveal .8s ease both}.rank-up-subtitle{font:700 11px Orbitron,sans-serif;color:#dbeafe;letter-spacing:1px}.rank-up-exp{display:flex;justify-content:space-between;gap:12px;padding:13px;margin:18px 0;border:1px solid #ffffff26;border-radius:10px;background:#02061788;font-size:11px}.rank-up-exp span{color:#94a3b8}.rank-up-exp b{color:#fde68a;text-shadow:0 0 10px #f59e0b}.rank-up-meter{height:7px;border-radius:10px;background:#25334b;overflow:hidden;margin-bottom:20px}.rank-up-meter i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#38bdf8,#a78bfa,#facc15);box-shadow:0 0 14px #38bdf8;animation:rankExpFill 1.1s ease both}.rank-level-1.rank-up-title,.rank-up-badge.rank-level-1{color:#cbd5e1}.rank-level-2.rank-up-title,.rank-up-badge.rank-level-2{color:#67e8f9}.rank-level-3.rank-up-title,.rank-up-badge.rank-level-3{color:#6ee7b7}.rank-level-4.rank-up-title,.rank-up-badge.rank-level-4{color:#d8b4fe}.rank-level-5.rank-up-title,.rank-up-badge.rank-level-5{color:#fde68a}.rank-up-intro .rank-up-badge{animation:rankBadgeIntro 1.4s ease-in-out infinite}.rank-up-reveal .rank-up-badge{animation:rankBadgeReveal .9s cubic-bezier(.2,.8,.2,1) both}.rank-up-reveal .rank-up-box{border-color:currentColor;box-shadow:0 0 38px currentColor}.rank-up-reveal .rank-up-title{animation:rankTitleReveal .8s ease both}@keyframes rankBadgePulse{50%{transform:scale(1.06) rotate(4deg);filter:brightness(1.4)}}@keyframes rankBadgeIntro{0%,100%{transform:scale(.95);filter:brightness(.85)}50%{transform:scale(1.08);filter:brightness(1.7)}}@keyframes rankBadgeReveal{0%{transform:scale(.1) rotate(-160deg);opacity:0}70%{transform:scale(1.18) rotate(12deg);opacity:1}100%{transform:scale(1) rotate(0)}}@keyframes rankTitleReveal{0%{transform:translateY(14px) scale(.8);opacity:0;filter:blur(6px)}100%{transform:translateY(0) scale(1);opacity:1;filter:blur(0)}}@keyframes rankExpFill{from{width:0}to{width:100%}}
+
+
+/* Player profile mode: animated, rank-colored identity card and owned ship showcase */
+#profileBtn{max-width:570px;margin:0 auto 8px;letter-spacing:1px;border-color:#3478a5}
+.player-profile-card{position:relative;isolation:isolate;overflow:hidden;border:1px solid #64748b;border-radius:18px;padding:18px;margin:8px 0 16px;background:radial-gradient(ellipse at 50% 0%,#1e3a5f 0%,#081326 62%);box-shadow:0 0 18px #64748b33;animation:profileCardFloat 5s ease-in-out infinite}
+.player-profile-card:before{content:"";position:absolute;inset:-50%;z-index:-1;pointer-events:none;background:conic-gradient(from 0deg,transparent,#ffffff14,transparent,#38bdf822,transparent);animation:profileRotate 14s linear infinite}
+.player-profile-card.rank-level-1{border-color:#94a3b8;box-shadow:0 0 18px #94a3b833}.player-profile-card.rank-level-2{border-color:#38bdf8;box-shadow:0 0 22px #38bdf844}.player-profile-card.rank-level-3{border-color:#34d399;box-shadow:0 0 25px #34d39944}.player-profile-card.rank-level-4{border-color:#c084fc;box-shadow:0 0 28px #c084fc55}.player-profile-card.rank-level-5{border-color:#fbbf24;box-shadow:0 0 32px #fbbf2466}
+.profile-orbit{position:absolute;right:-34px;top:38px;width:150px;height:55px;border:1px solid currentColor;border-radius:50%;opacity:.35;transform:rotate(-28deg);animation:profileOrbit 8s linear infinite;pointer-events:none}.rank-level-1 .profile-orbit{color:#cbd5e1}.rank-level-2 .profile-orbit{color:#38bdf8}.rank-level-3 .profile-orbit{color:#34d399}.rank-level-4 .profile-orbit{color:#c084fc}.rank-level-5 .profile-orbit{color:#fbbf24}
+.profile-id-line{display:flex;align-items:center;gap:8px;position:relative}.profile-id-line span{font:700 9px Orbitron;color:#8aa7c3;letter-spacing:1.5px}.profile-id-line b{font:700 12px Orbitron;color:#e5f6ff;text-shadow:0 0 10px currentColor;flex:1}.profile-id-line button{padding:6px 9px;font-size:9px}.profile-player-name{font:800 clamp(23px,6vw,34px) Orbitron;color:#f0f9ff;margin-top:22px;overflow-wrap:anywhere;text-shadow:0 0 16px #38bdf866}.profile-rank-title{font:800 clamp(18px,5vw,26px) Orbitron;margin-top:8px;letter-spacing:1.4px;animation:rankTextGlow 2s ease-in-out infinite}.rank-level-1 .profile-rank-title{color:#cbd5e1;text-shadow:0 0 12px #94a3b8}.rank-level-2 .profile-rank-title{color:#67e8f9;text-shadow:0 0 15px #22d3ee}.rank-level-3 .profile-rank-title{color:#6ee7b7;text-shadow:0 0 15px #34d399}.rank-level-4 .profile-rank-title{color:#e9d5ff;text-shadow:0 0 17px #c084fc}.rank-level-5 .profile-rank-title{color:#fde68a;text-shadow:0 0 20px #f59e0b}.profile-exp-text{color:#b9d8f1;font:600 12px Orbitron;margin-top:7px}.profile-created{font-size:10px;color:#7895b2;margin-top:8px;letter-spacing:.8px}.profile-favorite{border-top:1px solid #ffffff20;margin-top:18px;padding-top:14px}.profile-favorite label{display:block;font:700 9px Orbitron;letter-spacing:1.3px;color:#9dc4e3;margin-bottom:8px}.profile-favorite select{width:100%;background:#071326;color:#eaf7ff;border:1px solid #2d5b7a;border-radius:8px;padding:10px}.favorite-ship-showcase{display:flex;align-items:center;gap:12px;margin-top:10px;padding:10px;border-radius:12px;background:#020b18a8;border:1px solid #ffffff15}.favorite-ship-showcase img{width:76px;height:76px;object-fit:contain;filter:drop-shadow(0 0 12px #38bdf877);animation:lobbyFloat 3.2s ease-in-out infinite}.favorite-ship-showcase div{display:flex;flex-direction:column;gap:5px}.favorite-ship-showcase b{font:700 13px Orbitron;color:#f0f9ff}.favorite-ship-showcase small{font:600 9px Orbitron;color:#67e8f9}.profile-ach-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.profile-ach-head h3{margin:0}.profile-ach-head small{color:#8ca9c6;font-size:10px}.profile-achievement-choices{display:grid;gap:7px;margin-top:12px}.profile-ach-choice{display:flex;align-items:center;gap:10px;border:1px solid #25405b;background:#09172a;border-radius:8px;padding:10px;color:#cdeaff;font-size:12px}.profile-ach-choice input{accent-color:#38bdf8;width:18px;height:18px}.profile-featured-achievements{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.featured-achievement{font:600 9px Orbitron;color:#f5d0fe;border:1px solid #a855f766;background:#581c8722;padding:7px 9px;border-radius:7px;box-shadow:0 0 10px #a855f722}
+.all-ship-skill-info{display:grid;gap:7px;margin:10px 0 18px}.ship-skill-info-row{display:flex;align-items:center;gap:10px;border:1px solid #27415d;border-radius:9px;padding:8px 10px;background:#081426}.ship-skill-info-row img{width:42px;height:42px;object-fit:contain}.ship-skill-info-row div{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}.ship-skill-info-row b{font:700 10px Orbitron;color:#e5f6ff}.ship-skill-info-row small{font-size:10px;color:#8ca9c6}.ship-skill-info-row strong{font:700 10px Orbitron;color:#fcd34d;white-space:nowrap}.ship-skill-info-row.rarity-legendary{border-color:#d6a84d55}.ship-skill-info-row.rarity-omega{border-color:#ff345877;box-shadow:inset 0 0 0 1px #ff345822}
+@keyframes profileCardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes profileRotate{to{transform:rotate(360deg)}}@keyframes profileOrbit{to{transform:rotate(332deg)}}@keyframes rankTextGlow{50%{filter:brightness(1.25)}}
+
+/* Profile access in the lobby header; compact bottom-sheet style on mobile. */
+.profile-top-btn{color:#7dd3fc;border-color:#2563a1;text-shadow:0 0 10px #38bdf8;box-shadow:0 0 10px #38bdf822}
+.profile-screen{width:100%;max-width:720px;margin:0 auto;}
+.profile-screen .player-profile-card,.profile-screen>.settings-card{max-width:620px;margin-left:auto;margin-right:auto}
+.profile-screen .player-profile-card{max-height:48dvh;overflow-y:auto;overscroll-behavior:contain}
+.profile-screen>.settings-card{max-height:30dvh;overflow-y:auto;overscroll-behavior:contain}
+@media(max-width:480px){.top-actions{gap:5px}.top-actions .icon-btn{width:31px;height:33px}.top-actions #coinBadge{font-size:10px}.profile-screen{padding:10px 12px 18px}.profile-screen .section-head{margin-bottom:10px}.profile-screen .player-profile-card{padding:13px;max-height:43dvh}.profile-screen>.settings-card{padding:11px;max-height:29dvh}.profile-player-name{margin-top:12px}}
+
+/* Compact editable player identity profile */
+.profile-page-head{display:flex;align-items:center;gap:12px;margin:4px 0 12px}.profile-page-head .backBtn{flex:0 0 44px}.profile-page-head h2{font:800 21px Orbitron,sans-serif;letter-spacing:2px;margin:0;color:#e0f2fe;text-shadow:0 0 14px #38bdf855}
+.profile-screen{overflow-y:auto;overscroll-behavior:contain}.profile-screen .player-profile-card{max-height:none;overflow:visible;padding:14px;margin:0 0 14px}.profile-card-top{display:flex;align-items:flex-start;gap:10px;justify-content:space-between;position:relative}.profile-name-block{min-width:0;flex:1}.profile-player-name{margin:0;font-size:clamp(20px,5vw,29px);line-height:1.25}.profile-id-inline{display:flex;align-items:center;gap:7px;margin-top:6px;font-size:10px;color:#8ca9c6}.profile-id-inline b{font:700 10px Orbitron,sans-serif;color:#e0f2fe;letter-spacing:.6px}.profile-menu-btn{width:34px;height:34px;flex:0 0 34px;border:1px solid #315b7d;border-radius:9px;background:#071326;color:#a5e9ff;font-size:21px;line-height:1}.profile-menu{position:absolute;right:0;top:39px;z-index:8;display:grid;gap:4px;min-width:145px;padding:6px;border:1px solid #2e5c7d;border-radius:10px;background:#071326;box-shadow:0 12px 30px #0009}.profile-menu button{border:0;background:#0b1b30;color:#dff6ff;padding:10px;text-align:left;border-radius:6px;font-size:10px;font-weight:800;letter-spacing:.5px}.profile-main-row{display:flex;align-items:center;gap:13px;margin-top:15px;padding-bottom:13px;border-bottom:1px solid #ffffff20}.profile-avatar-wrap{width:82px;flex:0 0 82px;display:flex;flex-direction:column;align-items:center;gap:5px}.profile-avatar{width:66px;height:66px;border-radius:50%;display:grid;place-items:center;font-size:32px;background:radial-gradient(circle at 30% 20%,#245273,#071326 70%);border:2px solid currentColor;box-shadow:0 0 18px currentColor;animation:profileCardFloat 4s ease-in-out infinite}.rank-level-1 .profile-avatar{color:#cbd5e1}.rank-level-2 .profile-avatar{color:#67e8f9}.rank-level-3 .profile-avatar{color:#6ee7b7}.rank-level-4 .profile-avatar{color:#d8b4fe}.rank-level-5 .profile-avatar{color:#fde68a}.profile-avatar-wrap small{font-size:8px;letter-spacing:1.4px;color:#8ca9c6}.profile-rank-block{flex:1;min-width:0}.profile-rank-block .profile-rank-title{margin:0;font-size:clamp(17px,4.5vw,23px)}.profile-rank-block .profile-exp-text{margin-top:5px}.profile-rank-block .profile-created{font-size:9px;line-height:1.4;overflow-wrap:anywhere}.profile-bottom-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:12px;align-items:end}.profile-custom-achievements,.profile-favorite{min-width:0}.profile-custom-achievements> b{font:700 9px Orbitron,sans-serif;letter-spacing:.8px;color:#9dc4e3}.profile-featured-achievements{display:grid;gap:6px;margin-top:8px}.featured-achievement{display:block;overflow-wrap:anywhere;font-size:9px;padding:7px}.profile-favorite{border:1px solid #ffffff20;border-radius:10px;background:#020b18a8;padding:9px;margin:0}.profile-favorite label{font-size:8px;line-height:1.4}.profile-favorite select{font-size:10px;padding:7px 5px}.favorite-ship-showcase{margin-top:7px;padding:5px;gap:5px;min-height:64px}.favorite-ship-showcase img{width:55px;height:55px;flex:0 0 55px}.favorite-ship-showcase b{font-size:9px;overflow-wrap:anywhere}.favorite-ship-showcase small{font-size:7px}.favorite-ship-showcase.rarity-legendary{border-color:#fbbf2488;box-shadow:0 0 12px #fbbf2422}.favorite-ship-showcase.rarity-epic{border-color:#c084fc88;box-shadow:0 0 12px #c084fc22}.favorite-ship-showcase.rarity-special{border-color:#34d39988}.profile-edit-panel{max-height:none!important;overflow:visible!important;margin-bottom:16px}.profile-edit-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.profile-edit-head h3{margin:0}.profile-edit-head button{padding:7px 12px;font-size:10px}.profile-edit-panel>label{display:block;margin:14px 0 7px;font:700 9px Orbitron,sans-serif;letter-spacing:1px;color:#9dc4e3}.profile-edit-panel input:not([type=checkbox]){width:100%;box-sizing:border-box;margin:4px 0;padding:11px;border:1px solid #284e6d;border-radius:8px;background:#061225;color:#e5f6ff;font:500 12px inherit}.profile-avatar-choices{display:flex;gap:7px;flex-wrap:wrap}.profile-avatar-choices button{width:39px;height:39px;border:1px solid #315b7d;border-radius:9px;background:#071326;font-size:20px}.profile-avatar-choices button.selected{border-color:#38bdf8;box-shadow:0 0 14px #38bdf866;background:#0c2b42}.profile-edit-panel .muted{font-size:10px;margin:4px 0 8px}
+@media(max-width:480px){.profile-screen{padding:10px 12px 22px}.profile-screen .player-profile-card{max-height:none;padding:12px}.profile-bottom-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px}.profile-avatar-wrap{width:72px;flex-basis:72px}.profile-avatar{width:58px;height:58px;font-size:28px}.profile-favorite{padding:7px}.favorite-ship-showcase img{width:44px;height:44px;flex-basis:44px}.profile-created{letter-spacing:0}.profile-edit-panel{max-height:none!important}}
+
+/* Profile edit improvements */
+.profile-page-head .backBtn,.section-head .backBtn{color:#64e8ff!important;background:#0a1729!important;border:1px solid #287ca2!important;display:grid;place-items:center;text-shadow:0 0 10px #38bdf8;box-shadow:0 0 10px #0891b220}
+.profile-page-head .backBtn{width:44px;height:44px;border-radius:10px;font-size:26px;font-weight:800;line-height:1}
+.profile-favorite-editor{display:none!important}
+#profileEditPanel:not(.hidden) ~ .profile-favorite-editor{display:block!important}
+.profile-gallery-label{display:block;margin:8px 0;padding:11px;border:1px solid #287ca2;border-radius:8px;text-align:center;background:#0a1d32;color:#72eaff;font:700 10px Orbitron,sans-serif;cursor:pointer}
+.profile-ach-choice{width:100%;text-align:left}
+.profile-ach-choice:has(input:disabled){opacity:.55}
+.profile-avatar{overflow:hidden}
+.profile-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.player-profile-card.editing .profile-favorite-editor{display:block!important}.player-profile-card:not(.editing) .profile-favorite-editor{display:none!important}
+/* Profile follow-up fixes: persistent ship showcase, reliable mobile scrolling, GPS location */
+.profile-screen{height:calc(100dvh - 66px);min-height:0;max-height:calc(100dvh - 66px);overflow-y:auto!important;overflow-x:hidden;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y;padding-bottom:30px!important}
+.profile-screen .player-profile-card{overflow:visible!important;max-height:none!important}
+.profile-favorite-editor{display:block!important}
+.profile-favorite .favorite-ship-display>label{display:block!important}
+.profile-favorite .favorite-ship-edit{display:none}
+.player-profile-card.editing .profile-favorite .favorite-ship-edit{display:block}
+.player-profile-card.editing .profile-favorite .favorite-ship-display{display:none}
+.profile-location-text{max-width:82px;text-align:center;overflow-wrap:anywhere;line-height:1.25;font-size:7px!important;letter-spacing:.2px!important;color:#8ca9c6!important}
+#profileUseGpsBtn{margin:4px 0 12px;padding:10px;font-size:9px}
+.profile-edit-panel{overflow:visible!important;max-height:none!important}
+
+/* V3 profile layout based on user's wireframe */
+.profile-screen{height:calc(100dvh - 66px);max-height:calc(100dvh - 66px);overflow-y:auto!important;overflow-x:hidden;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y;padding-bottom:34px!important}
+.profile-screen .player-profile-card{max-height:none!important;overflow:visible!important;padding:14px;margin-bottom:14px}
+.profile-card-top{display:grid!important;grid-template-columns:78px minmax(0,1fr) 34px;gap:10px!important;align-items:start!important;position:relative}
+.profile-avatar-wrap{width:78px!important;flex:0 0 78px!important;gap:5px!important}
+.profile-avatar{width:72px!important;height:72px!important;font-size:29px!important}
+.profile-identity-block{min-width:0;padding-top:5px}
+.profile-player-name{font-size:clamp(17px,4.7vw,27px)!important;line-height:1.2!important;overflow-wrap:anywhere}
+.profile-id-inline{margin-top:5px!important}
+.profile-location-inline{font-size:10px;color:#9dc4e3;margin-top:6px;overflow-wrap:anywhere}
+.profile-created{font-size:9px!important;margin-top:4px!important;overflow-wrap:anywhere}
+.profile-rank-inline{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;margin-top:8px}
+.profile-rank-inline>span{font:700 9px Orbitron,sans-serif;color:#9dc4e3;letter-spacing:1px}
+.profile-rank-inline .profile-rank-title{font-size:15px!important;margin:0!important}
+.profile-rank-inline .profile-exp-text{font-size:10px!important;margin:0!important}
+.profile-menu{right:0;top:39px}
+.profile-bottom-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:stretch!important}
+.profile-favorite-editor{display:block!important}
+.profile-favorite .favorite-ship-display{display:block!important}
+.profile-favorite .favorite-ship-edit{display:none!important}
+.player-profile-card.editing .profile-favorite .favorite-ship-edit{display:block!important}
+.player-profile-card.editing .profile-favorite .favorite-ship-display{display:none!important}
+.profile-location-text{max-width:78px;text-align:center;overflow-wrap:anywhere;line-height:1.2;font-size:7px!important;letter-spacing:.4px!important;color:#8ca9c6!important}
+.profile-edit-panel{overflow:visible!important;max-height:none!important}
+@media(max-width:380px){.profile-card-top{grid-template-columns:65px minmax(0,1fr) 32px;gap:7px!important}.profile-avatar-wrap{width:65px!important;flex-basis:65px!important}.profile-avatar{width:58px!important;height:58px!important}.profile-bottom-row{gap:6px!important}.favorite-ship-showcase img{width:38px!important;height:38px!important;flex-basis:38px!important}}
+
+.player-profile-card:not(.editing) .profile-favorite-editor{display:block!important}.player-profile-card.editing .profile-favorite-editor{display:block!important}
+
+/* Achievement rarity polish and skill duration details */
+.achievement-row{position:relative;overflow:hidden;border:1px solid #29445f;border-left:4px solid #8493a8;background:linear-gradient(120deg,rgba(13,27,48,.96),rgba(7,13,27,.98));border-radius:12px;padding:13px 14px;box-shadow:inset 0 0 18px rgba(35,80,130,.08);margin:8px 0}
+.achievement-row b{display:block;font-size:14px;letter-spacing:.35px;margin-bottom:5px}
+.achievement-row small{display:block;line-height:1.5;color:#a8c4df}
+.achievement-row>span{display:inline-block;margin-top:8px;font-size:9px;font-weight:900;letter-spacing:1.2px;padding:4px 7px;border-radius:5px;background:#17283a;color:#a9c8e4}
+.achievement-row.ready-to-claim{border-color:#f5c451;border-left-color:#ffd76a;background:linear-gradient(120deg,rgba(74,49,12,.4),rgba(7,13,27,.98));box-shadow:inset 0 0 22px rgba(255,197,65,.09)}
+.achievement-row.unlocked{border-left-color:#54f0c0;background:linear-gradient(120deg,rgba(14,65,65,.35),rgba(7,13,27,.98))}
+.achievement-row.achievement-warrior{border-left-color:#ff766e}.achievement-row.achievement-collector{border-left-color:#bd8cff}.achievement-row.achievement-rank{border-left-color:#65dfff}
+.achievement-row.rarity-common{border-left-color:#a8b6c8}.achievement-row.rarity-normal{border-left-color:#64dca7}.achievement-row.rarity-special{border-left-color:#54dfff}.achievement-row.rarity-epic{border-left-color:#c38bff}.achievement-row.rarity-legendary{border-left-color:#ffcf66}.achievement-row.rarity-omega{border-left-color:#ff4969;box-shadow:inset 0 0 20px rgba(255,40,70,.12)}
+.achievement-rarity-tag{font-size:9px;text-transform:uppercase;letter-spacing:1.3px;font-weight:900}
+.skill-duration{color:#69eaff!important;font-size:10px!important;letter-spacing:.5px}
+
+
+/* Screenshot-matched STARFALL main menu and lobby polish */
+.main-menu-screen{position:relative;isolation:isolate;overflow:hidden;min-height:calc(100dvh - 66px);display:none;align-items:center;justify-content:center;flex-direction:column;padding:32px 20px 42px!important;background:radial-gradient(ellipse at 50% 28%,#101d50 0,#09122e 43%,#030814 100%)}
+.main-menu-screen.active{display:flex}
+.main-menu-stars{position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle at 8% 10%,#d9efff 0 1px,transparent 2px),radial-gradient(circle at 23% 24%,#b9d8ff 0 1px,transparent 2px),radial-gradient(circle at 70% 16%,#fff 0 1px,transparent 2px),radial-gradient(circle at 84% 39%,#d4e9ff 0 1px,transparent 2px),radial-gradient(circle at 39% 52%,#fff 0 1px,transparent 2px),radial-gradient(circle at 15% 72%,#d4e9ff 0 1px,transparent 2px),radial-gradient(circle at 91% 84%,#fff 0 1px,transparent 2px),radial-gradient(circle at 56% 92%,#d4e9ff 0 1px,transparent 2px);background-size:173px 197px,241px 229px,191px 233px,277px 263px,313px 251px,229px 277px,293px 211px,251px 307px;opacity:.85}
+.main-menu-screen .main-menu-logo{width:min(100%,500px);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto clamp(90px,17vh,170px);position:relative}
+.main-menu-logo:before{content:"";position:absolute;width:70%;height:130px;background:#08cfff55;filter:blur(42px);border-radius:50%;z-index:-1}
+.main-menu-logo img{display:block;width:min(100%,440px);max-height:190px;object-fit:contain;filter:drop-shadow(0 0 18px #08d8ff45)}
+.main-menu-logo span{font:600 clamp(12px,3.6vw,21px) Orbitron,sans-serif;letter-spacing:.25em;color:#7899b7;text-align:center;margin-top:-8px;text-shadow:0 0 10px #21bfff30}
+.main-menu-screen .main-menu-actions{display:flex;flex-direction:column;align-items:center;gap:13px;width:min(100%,440px);margin:0 auto}
+.main-menu-screen .main-menu-actions .wide{max-width:none;height:clamp(58px,9vh,76px);border-radius:13px;font:800 clamp(22px,6vw,34px) Orbitron,sans-serif;letter-spacing:.5px;color:white}
+.main-menu-screen .main-menu-actions .primary{background:linear-gradient(105deg,#087eff,#12d4f4);box-shadow:0 0 22px #008dff22}
+.main-menu-screen .main-menu-actions .secondary{background:linear-gradient(100deg,#063c73,#006276);border-color:#07537c}
+.main-menu-screen .account-shortcut{background:transparent;border:0;color:#6888a7;font:600 10px Orbitron,sans-serif;letter-spacing:1.5px;padding:5px 12px;margin-top:2px}
+#app:has(#lobbyScreen.active) .topbar{position:relative;height:68px;justify-content:center;padding:0 10px}
+#app:has(#lobbyScreen.active) .brand{position:absolute;left:50%;transform:translateX(-50%);text-align:center;gap:0}
+#app:has(#lobbyScreen.active) .brand-mark{display:none}
+#app:has(#lobbyScreen.active) .brand b{font-size:clamp(15px,4.3vw,24px);letter-spacing:3px;text-shadow:0 0 13px #7deaff8a}
+#app:has(#lobbyScreen.active) .brand small{font-size:8px;letter-spacing:2px}
+#app:has(#lobbyScreen.active) .top-actions{gap:6px}
+#app:has(#lobbyScreen.active) .top-actions #coinBadge{position:absolute;right:12px;top:76px;padding:12px 15px;background:#061427;border:1px solid #0787ad;border-radius:0 0 8px 8px;box-shadow:0 0 10px #00cfff35;font-size:14px;z-index:2}
+#app:has(#lobbyScreen.active) #topProfileBtn{position:absolute;left:12px;top:14px}
+#app:has(#lobbyScreen.active) #soundBtn{position:absolute;right:59px;top:14px}
+#app:has(#lobbyScreen.active) #topSettingsBtn{position:absolute;right:12px;top:14px}
+#app:has(#lobbyScreen.active) .screen#lobbyScreen{padding:10px 12px 24px;background:linear-gradient(180deg,#091331,#030916)}
+#app:has(#lobbyScreen.active) .lobby-hero{padding:16px 0 8px;max-width:680px}
+#app:has(#lobbyScreen.active) .lobby-heading{display:none}
+#app:has(#lobbyScreen.active) .rank-summary{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;margin:0 0 16px;padding:12px 14px;border:1px solid #a87816;border-radius:9px;background:linear-gradient(100deg,#3b260b,#101529 75%);box-shadow:inset 0 0 12px #ffbd3b12;min-height:54px}
+#app:has(#lobbyScreen.active) .rank-summary b{font:700 11px Orbitron,sans-serif;color:#ffdc79;letter-spacing:.7px}
+#app:has(#lobbyScreen.active) .rank-summary small{font:600 10px Orbitron,sans-serif;color:#d3e4f5;text-align:right}
+#app:has(#lobbyScreen.active) .lobby-ship-stage{height:clamp(270px,39vh,420px);margin:clamp(50px,12vh,110px) auto 24px;width:92%;border:1px solid #154261;border-radius:26px;background:radial-gradient(ellipse at center,#111d43 0,#06101f 62%,#030916 100%);box-shadow:inset 0 0 32px #050b19;overflow:hidden}
+#app:has(#lobbyScreen.active) .lobby-ship-image{width:78%;height:76%;max-width:360px;object-fit:contain;filter:drop-shadow(0 0 19px #a44dff75)}
+#app:has(#lobbyScreen.active) .lobby-ship-label{bottom:18px}
+#app:has(#lobbyScreen.active) .lobby-ship-label small{letter-spacing:3px;color:var(--cyan)}
+#app:has(#lobbyScreen.active) .lobby-ship-label b{font-size:clamp(14px,3.7vw,21px)}
+#app:has(#lobbyScreen.active) #playBtn{height:44px;min-height:44px;width:82%;max-width:360px;padding:9px 12px;margin:0 auto;border-radius:9px;font-size:12px;letter-spacing:1.2px;display:block}
+#app:has(#lobbyScreen.active) .home-grid{gap:8px;margin:14px auto 12px}
+#app:has(#lobbyScreen.active) .menu-card{min-height:118px;border-radius:15px;background:linear-gradient(145deg,#0c2037,#06101f);border-color:#124369;padding:13px 4px}
+#app:has(#lobbyScreen.active) .menu-card span{font-size:23px}
+#app:has(#lobbyScreen.active) .menu-card b{font-size:clamp(8px,2.3vw,10px)}
+#app:has(#lobbyScreen.active) .menu-card small{font-size:11px}
+#app:has(#lobbyScreen.active) .tiny{display:none}
+#app:has(#lobbyScreen.active) #logoutBtn{margin-top:3px;min-height:58px;border-radius:12px;font-size:11px;letter-spacing:1.2px}
+@media(max-height:720px){.main-menu-screen .main-menu-logo{margin-bottom:9vh}.main-menu-logo img{max-height:140px}#app:has(#lobbyScreen.active) .lobby-ship-stage{margin-top:40px;height:260px}}
+
+/* TEST BUILD FIXES: edge-to-edge gameplay on mobile */
+html,body,#app{width:100%;height:100%;min-height:100%;max-width:none;margin:0;border:0;overflow-x:hidden}
+#app:has(#gameScreen.active) .topbar{display:none!important}
+#app:has(#gameScreen.active) main{height:100dvh;min-height:100dvh}
+#app:has(#gameScreen.active) .game-screen{position:fixed;inset:0;width:100vw;height:100dvh;min-height:100dvh;max-width:none;margin:0;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);border:0;overflow:hidden;z-index:6}
+#app:has(#gameScreen.active) .hud{flex:0 0 auto;padding:7px 5px;gap:4px}
+#app:has(#gameScreen.active) #gameCanvas{flex:1 1 auto;width:100vw;height:auto;min-height:0;max-height:none;object-fit:fill}
+#app:has(#gameScreen.active) .game-controls{flex:0 0 auto;padding:6px 8px calc(6px + env(safe-area-inset-bottom));background:#050b18ee}
+#app:has(#gameScreen.active) .game-bottom{display:none}
+#app:has(#gameScreen.active) .joystick{bottom:calc(88px + env(safe-area-inset-bottom))!important}
+#app:has(#gameScreen.active) .game-controls #dashBtn{width:44px;max-width:44px;flex:0 0 44px;border-radius:50%;font-size:8px}
+#app:has(#gameScreen.active) .game-controls #ultimateBtn{flex:1 1 auto}
+#app:has(#gameScreen.active) .game-controls #abilityBtn{flex:1 1 auto}
+#app:has(#gameScreen.active) .game-controls .cooldown-ring{border-radius:50%}
+
+/* Starfall logo and in-canvas pause control */
+.main-menu-logo img{width:min(100%,620px);max-height:clamp(150px,28vh,250px);object-fit:contain}
+.game-pause-btn{display:none;position:absolute;top:calc(env(safe-area-inset-top) + 8px);right:10px;z-index:8;width:42px;height:42px;border-radius:10px;border:1px solid #39d9ff;background:#06172ddd;color:#dffaff;font-size:23px;font-weight:800;box-shadow:0 0 14px #00bfff55}
+#app:has(#gameScreen.active) .game-pause-btn{display:block}
+#app:has(#gameScreen.active) .hud{padding-right:58px}
+.upgrade-row em{font-style:normal;color:#61ffb1;font-weight:800}
+
+#accountScreen .password-toggle{display:block;width:100%;margin:-5px 0 12px;padding:8px 10px;font-size:10px;letter-spacing:.6px;border-radius:7px;}
+
+
+/* STARFALL rank polish and compact mobile lobby */
+#app:has(#lobbyScreen.active) .rank-summary.rank-level-1{
+  min-height:30px;padding:5px 9px;margin-bottom:8px;gap:6px;
+  border-color:#294158;background:linear-gradient(100deg,#101b2b,#0a1220 80%);
+  box-shadow:none;opacity:.78;border-radius:7px
+}
+#app:has(#lobbyScreen.active) .rank-summary.rank-level-1 b{font-size:9px;letter-spacing:.45px;color:#a9bacb}
+#app:has(#lobbyScreen.active) .rank-summary.rank-level-1 small{font-size:8px;color:#8197ad}
+#app:has(#lobbyScreen.active) .rank-summary.rank-level-1 .rank-crown{font-size:9px;color:#9aaec0;text-shadow:none}
+#app:has(#lobbyScreen.active) .rank-summary.rank-level-5{
+  position:relative;isolation:isolate;overflow:hidden;border:1px solid #8af5ff;
+  background:linear-gradient(105deg,#101a46,#18245b 48%,#26134d);
+  box-shadow:0 0 10px #4beaff55,inset 0 0 18px #6a5bff30
+}
+#app:has(#lobbyScreen.active) .rank-summary.rank-level-5::after{
+  content:'ϟ  ⚡  ϟ';position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  color:#9ffaff;font:800 20px Orbitron,sans-serif;letter-spacing:4px;opacity:.55;
+  text-shadow:0 0 7px #63f4ff,0 0 16px #5d68ff;pointer-events:none;
+  animation:commanderLightning 1.15s steps(2,end) infinite
+}
+#app:has(#lobbyScreen.active) .rank-summary.rank-level-5 b,
+#app:has(#lobbyScreen.active) .rank-summary.rank-level-5 small{position:relative;z-index:1;text-shadow:0 0 8px #57eaff70}
+#app:has(#lobbyScreen.active) .rank-summary.rank-level-5 b{color:#d7ffff}
+#app:has(#lobbyScreen.active) .rank-summary.rank-level-5 small{padding-right:80px}
+@keyframes commanderLightning{0%,100%{opacity:.22;filter:brightness(.8)}50%{opacity:.95;filter:brightness(1.5)}}
+@media(prefers-reduced-motion:reduce){#app:has(#lobbyScreen.active) .rank-summary.rank-level-5::after{animation:none;opacity:.7}}
+@media(max-height:850px){
+ #app:has(#lobbyScreen.active) .lobby-ship-stage{height:clamp(190px,29vh,270px);margin:20px auto 12px}
+ #app:has(#lobbyScreen.active) #playBtn{height:36px;min-height:36px;width:72%;max-width:300px;padding:6px 10px;font-size:10px;margin-top:0}
+ #app:has(#lobbyScreen.active) .home-grid{gap:6px;margin:9px auto 7px}
+ #app:has(#lobbyScreen.active) .menu-card{min-height:94px;padding:8px 3px;gap:5px}
+ #app:has(#lobbyScreen.active) .menu-card span{font-size:19px}
+ #app:has(#lobbyScreen.active) .menu-card small{font-size:10px}
+ #app:has(#lobbyScreen.active) #logoutBtn{min-height:42px;padding:8px;margin-top:0}
+}
+
+/* Achievement difficulty tiers: grey = easy, green = medium, red = hard. */
+.achievement-row.difficulty-easy{border-color:#7b8797;border-left-color:#9aa6b5;background:linear-gradient(120deg,rgba(100,116,139,.15),rgba(7,13,27,.98))}
+.achievement-row.difficulty-easy b{color:#cbd5e1}
+.achievement-row.difficulty-medium{border-color:#22c55e;border-left-color:#4ade80;background:linear-gradient(120deg,rgba(22,101,52,.24),rgba(7,13,27,.98))}
+.achievement-row.difficulty-medium b{color:#86efac}
+.achievement-row.difficulty-hard{border-color:#ef4444;border-left-color:#f87171;background:linear-gradient(120deg,rgba(127,29,29,.3),rgba(7,13,27,.98));box-shadow:inset 0 0 18px rgba(239,68,68,.1)}
+.achievement-row.difficulty-hard b{color:#fca5a5}
+.profile-ach-choice.difficulty-easy{border-color:#7b8797;background:rgba(100,116,139,.12)}
+.profile-ach-choice.difficulty-medium{border-color:#22c55e;background:rgba(22,101,52,.18)}
+.profile-ach-choice.difficulty-hard{border-color:#ef4444;background:rgba(127,29,29,.2)}
+.featured-achievement.difficulty-easy{color:#cbd5e1;border-color:#94a3b866;background:#64748b22;box-shadow:none}
+.featured-achievement.difficulty-medium{color:#86efac;border-color:#22c55e88;background:#16653433;box-shadow:0 0 10px #22c55e22}
+.featured-achievement.difficulty-hard{color:#fca5a5;border-color:#ef4444aa;background:#7f1d1d44;box-shadow:0 0 12px #ef444422}
+.power-up-upgrade{border-color:#38bdf866;background:linear-gradient(120deg,rgba(8,47,73,.45),rgba(7,13,27,.98))}
+
+
+/* Unified EXTREME achievement tier: gold profile badges and achievement cards. */
+.achievement-row.difficulty-extreme,
+.profile-ach-choice.difficulty-extreme {
+  border-color: #d4a72c;
+  border-left-color: #ffd45c;
+  background: linear-gradient(120deg, rgba(161, 112, 10, .26), rgba(7, 13, 27, .98));
+  box-shadow: inset 0 0 16px rgba(255, 205, 64, .09);
+}
+.achievement-row.difficulty-extreme b,
+.profile-ach-choice.difficulty-extreme span,
+.profile-ach-choice.difficulty-extreme small {
+  color: #ffe08a;
+}
+.featured-achievement.difficulty-extreme {
+  color: #ffe08a;
+  border-color: #e8bd42;
+  background: rgba(161, 112, 10, .24);
+  box-shadow: 0 0 12px rgba(255, 205, 64, .2);
+}
+
+/* Achievement difficulty: green = easy, orange = normal, red = hard. */
+.achievement-row.difficulty-easy{border-color:#22c55e;border-left-color:#4ade80;background:linear-gradient(120deg,rgba(22,101,52,.2),rgba(7,13,27,.98))}
+.achievement-row.difficulty-easy b,.achievement-row.difficulty-easy .difficulty-label{color:#86efac}
+.achievement-row.difficulty-normal{border-color:#f97316;border-left-color:#fb923c;background:linear-gradient(120deg,rgba(154,52,18,.23),rgba(7,13,27,.98))}
+.achievement-row.difficulty-normal b,.achievement-row.difficulty-normal .difficulty-label{color:#fdba74}
+.achievement-row.difficulty-hard{border-color:#ef4444;border-left-color:#f87171;background:linear-gradient(120deg,rgba(127,29,29,.3),rgba(7,13,27,.98));box-shadow:inset 0 0 18px rgba(239,68,68,.1)}
+.achievement-row.difficulty-hard b,.achievement-row.difficulty-hard .difficulty-label{color:#fca5a5}
+.profile-ach-choice.difficulty-easy{border-color:#22c55e;background:rgba(22,101,52,.18)}
+.profile-ach-choice.difficulty-normal{border-color:#f97316;background:rgba(154,52,18,.2)}
+.profile-ach-choice.difficulty-hard{border-color:#ef4444;background:rgba(127,29,29,.2)}
+.featured-achievement.difficulty-easy{color:#86efac;border-color:#22c55e88;background:#16653433;box-shadow:0 0 10px #22c55e22}
+.featured-achievement.difficulty-normal{color:#fdba74;border-color:#f9731688;background:#9a341233;box-shadow:0 0 10px #f9731622}
+.featured-achievement.difficulty-hard{color:#fca5a5;border-color:#ef4444aa;background:#7f1d1d44;box-shadow:0 0 12px #ef444422}
+
+/* STARFALL futuristic typography */
+:root{--font-display:'Orbitron','Arial Narrow',sans-serif;--font-ui:'Rajdhani','Arial Narrow',sans-serif}
+.brand b,.brand small,.eyebrow,h1,h2,h3,.section-head h2,.primary,.secondary,.menu-card b,.hud b,.hud small,.lobby-ship-label b,.lobby-ship-label small{font-family:var(--font-display)}
+body,button,input,select,textarea,p,.tiny,.menu-card small,.ship-card,.upgrade-row{font-family:var(--font-ui)}

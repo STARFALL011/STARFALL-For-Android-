@@ -1,0 +1,200 @@
+STARFALL: INFINITE ASSAULT
+CONSOLIDATED PATCH HISTORY
+========================================
+
+LATEST PATCH
+- Loading an existing saved account now returns to the main menu (home screen)
+  instead of jumping straight into the lobby. The player can then press START
+  to enter the lobby and use PLAY/DEPLOY as intended.
+
+MENU AND ACCOUNT SYSTEM
+- Main menu flow: START, ACCOUNT, EXIT.
+- Account screen supports selecting/loading saved accounts, creating a new account,
+  deleting a selected account with confirmation, and activating Admin Tester.
+- New normal accounts start with 300 coins.
+- Account cards display each saved account's name and current coin balance.
+- Admin Tester is labeled ADMIN rather than showing a normal player's balance.
+- Selected account is visually highlighted.
+- Account name input is hidden until CREATE NEW ACCOUNT is pressed.
+- Account progress is stored locally on the device/browser. This is not online
+  authentication or cloud synchronization.
+- Achievement progress and reward claims are intended to be stored per account.
+
+LOBBY AND NAVIGATION
+- Lobby displays the selected ship, rarity, ship skill label, and coin balance.
+- Removed the duplicate coin display beneath the featured ship.
+- Settings shortcut belongs in the lobby; gameplay should keep the pause control
+  as the primary top-bar action.
+- Ship Hangar, Flight Manual, and Achievements cards were compacted for a
+  single-row mobile layout.
+- Pause menu is the place to access resume/exit-run actions.
+
+SHIP HANGAR AND SHIPS
+- Hangar is designed to show up to six ships per page with left/right navigation.
+- Ship details include name, life/health, damage, speed, and special skill.
+- Ship upgrade progress is intended to remain specific to each ship.
+- Existing ship artwork/assets are retained where referenced by the project.
+- The project includes the Space 5 / Galaxy Drift background asset from the
+  supplied assets archive.
+
+GAMEPLAY AND CONTROLS
+- Drag movement is the primary ship movement input; a simple tap should not
+  move the ship.
+- Double-tap is used for teleport with temporary immunity, subject to the
+  implemented cooldown and gameplay state.
+- The in-game pause control is used to pause and access run options.
+- Early enemy waves were requested to use gentler, less dense firing patterns,
+  with difficulty increasing gradually in later waves.
+- Skill handling was separated by skill/ship to reduce effects accidentally
+  carrying over from a previously activated skill.
+- Epic and higher-rarity skill buttons were requested to have stronger rarity-
+  themed visual effects and clearer activation/cooldown feedback.
+- Omega ships were requested to have a permanently active aura beneath the ship
+  and three unique Omega skills.
+
+BACKGROUND AND AUDIO
+- Space 5 / Galaxy Drift was added to the background selection.
+- Space backgrounds use a slight zoom and gentle automatic drift for a moving
+  background effect.
+- Audio controls are available from the lobby; gameplay audio access should be
+  managed through the pause/settings flow as implemented.
+
+ACHIEVEMENTS AND ECONOMY
+- Achievement rewards grant coins when first unlocked.
+- Rewards should not be claimable repeatedly for the same account/achievement.
+- Each player account should retain its own achievement progress and rewards.
+- Existing accounts retain their own saved coin balances; only new normal
+  accounts receive the 300-coin starting balance.
+
+PROJECT NOTES
+- The project is an offline-friendly HTML/CSS/JavaScript game intended for
+  SPCK Editor mobile preview.
+- Account data uses browser localStorage on the current device/browser.
+- This document consolidates the previous patch-note files. It is a record of
+  requested/implemented project changes, not a guarantee that every feature has
+  been exhaustively tested on a physical Android device.
+- Recommended final checks in SPCK Preview:
+  1. Load a normal account and confirm it returns to the main menu.
+  2. Press START and enter the lobby.
+  3. Verify account coins, Hangar, skills, pause menu, and per-account achievements.
+  4. Test on the target phone for responsive layout and touch controls.
+
+POWER-UP VISUALS & EFFECTS UPDATE
+- Coin Magnet now instantly collects all coin pickups currently inside the playfield; other boosts remain.
+- Health restores exactly one heart, respecting the ship's maximum health.
+- Shield lasts 4 seconds and displays a vertical countdown meter on the left side of the playfield.
+- Speed Boost doubles the selected ship's base movement speed (+100%) for 5 seconds, then restores the exact ship-specific speed.
+- Rapid Fire increases the normal fire rate by 50% for 6 seconds, respecting the game's fire-rate cap.
+- Ultimate Power-Up creates a glowing yellow laser that sweeps from the bottom toward the top, clearing regular enemies and enemy projectiles while preserving collectible power-ups. Bosses are destroyed and award their normal bonus.
+- Power-up pickups now have stronger, pulsing glow and distinct icons/shapes.
+- Flight Manual documents each power-up's visual behavior and exact effect.
+
+
+PATCH REVISION — SKILL & POWER-UP BALANCE
+- Phoenix Rebirth now restores full 3-heart HP, retains the blue-flame rapid-fire effect, and has a 30-second cooldown.
+- Void Freeze chains a visible energy strike across up to 3 nearby enemies and briefly freezes each hit target; cooldown remains 17 seconds.
+- Helix Beam cooldown is now 8 seconds.
+- Polar Field launches 8 fast homing rockets; cooldown is 14 seconds.
+- Grim Barrage's rift is deployed well away from the player (approximately 40% of the playfield width/height).
+- Celestial Rain now displays its remaining duration.
+- Event Horizon's black hole follows in front of the player, offset by 20% of the playfield height.
+- Omega Protocol was renamed Aetherion Cataclysm.
+- Crimson Singularity is thrown approximately 50% of the canvas away, pulls enemies for 3 seconds with a duration indicator, then clears enemies and hostile projectiles across the canvas.
+- Bloodline Erasure now follows the player's movement for 6 seconds and shows its remaining duration.
+- Red Dominion now summons 5 rotating escorts that fire homing rockets once per second for 15 seconds; cooldown is 30 seconds.
+- Rapid Fire power-up now doubles normal firing rate (+100%) for 6 seconds, subject to the game's global fire-rate cap.
+- Coin Magnet now lasts 12 seconds, attracts all coin pickups across the canvas, and shows a gold vertical countdown meter.
+- Flight Manual updated with the revised power-up and high-tier skill behavior.
+
+
+PATCH UPDATE — GRIM BARRAGE, CRIMSON SINGULARITY & SPACE COLORS
+- Grim Barrage now spawns directly in front of the player at 40% of the playfield height and follows the ship, rather than appearing to the left or right.
+- Crimson Singularity now stays 20% of the playfield height in front of the moving player during its 3-second pull, then triggers a large expanding red explosion wave that clears enemies and hostile projectiles while preserving power-ups.
+- Space background labels and fallback palettes now match: Space 1 Pale Blue, Space 2 Violet, Space 3 Blue Galaxy, Space 4 Red, Space 5 Pink Galaxy. Subtle color tinting helps each theme read clearly while retaining the original image assets.
+- Increased background zoom to 124% and increased the slow drift range so movement is easier to notice without exposing image edges.
+
+
+LATEST PATCH — WARP & MANUAL ACHIEVEMENT CLAIMS
+- Renamed the gameplay movement button and instructions from TELEPORT to WARP.
+- Achievement completion no longer grants coins automatically.
+- Completed achievements are saved in a per-save pending-claim list; players must open Achievements and press CLAIM REWARD.
+- Added a red glowing dot to the Lobby Achievements card whenever at least one reward is ready to claim.
+- Claimed achievements remain saved and cannot be claimed a second time.
+- Added visual styling for claimable achievement rows and claim buttons.
+
+
+UPDATE — WARP / GALAXY NAMES / SETTINGS
+- Increased Warp cooldown from about 2 seconds to 4 seconds.
+- Changed the Warp cooldown indicator and Warp arrival ring/particles to warm gold.
+- Renamed all five galaxy destinations: Azure Drift, Violet Nebula, Andromeda Reach, Crimson Rift, and Rosefire Expanse. Existing save keys/background assets remain unchanged.
+- Moved the Virtual Joystick checkbox into the same settings card as Sound Effects, so both controls are together.
+
+
+[2026-10-16] RANK SYSTEM
+- Added persistent Rank Points (RP) to each normal player account.
+- Earn RP after each run: 1 RP per enemy kill, 10 RP per round reached, and 50 bonus RP per defeated boss.
+- Rank thresholds: Cadet (0), Pilot (500), Ace (1,500), Elite (3,500), Galactic Commander (7,000).
+- Run results show RP earned and the player's current rank; lobby shows current rank and progress to the next rank.
+- Account selection cards show each normal player's rank and RP before loading the account. Admin Tester is explicitly excluded from rank progression and rank display.
+- Ship purchase requirements by rarity: Common=Cadet, Normal=Pilot, Special=Ace, Epic=Elite, Legendary/Omega=Galactic Commander. Rank unlocks purchase eligibility; coins are still required.
+- Rank points are saved per account and persist between runs.
+
+
+RANK TITLES AND ACHIEVEMENT EXPANSION
+- Added premium rank title styling with distinct Cadet, Pilot, Ace, Elite, and Galactic Commander colors. Higher ranks receive brighter glow/shimmer effects; Commander gets a gold cosmic aura.
+- Account selection rank labels use the matching rank color. Admin Tester remains excluded from rank progression.
+- Expanded achievements into three visible groups: Warrior, Collector, and Rank.
+- Added additional warrior milestones, collectible milestones, and rank-promotion achievements.
+- Achievement rewards remain manual claims; the red notification dot indicates rewards waiting to be claimed.
+- Rank achievements are checked after the run's RP is applied so promotions can unlock achievements immediately.
+
+
+ACHIEVEMENT BUG FIX — 2026-10-16
+- Fixed First Blood becoming claimable on a fresh account by resetting temporary run achievement counters when creating or loading an account.
+- Preserved each account’s own achievementReady and claimed achievement lists when loading an account.
+- Achievement readiness now checks only for a loaded non-admin account; Admin Tester does not get claimable achievements.
+- Re-evaluates achievement readiness when returning to the lobby and refreshes the red-dot indicator immediately after checks, so it does not require opening Achievements first.
+
+Achievement panels and stored Ultimate Laser update (2026-10-16)
+- Reorganized achievements into three collapsible panels: Warrior, Collector, and Rank. Each panel uses an up/down arrow to expand or collapse.
+- Added an independent red glowing dot to each category panel when that category has an unclaimed completed achievement.
+- Changed Ultimate Laser pickups to stored charges instead of auto-firing on collection. The central gold button shows 0/2, 1/2, or 2/2 charges and fires only when tapped.
+- Ultimate Laser charges cap at two; collecting another while full does not exceed the cap. The laser clears on-screen enemies and hostile projectiles when activated, while leaving collectible power-ups untouched.
+
+
+Rank-up cinematic and EXP terminology update
+- Renamed visible Rank Points (RP) labels to Experience (EXP) across rank summary, account cards, and run results while preserving saved progression compatibility.
+- Added rank-up modal after a run crosses a rank threshold. The previous rank is shown first with a charged/full EXP bar, then the player presses Reveal New Rank to animate into the new rank title and badge color. A second Continue action closes the modal.
+- Added tier-specific glow colors and animated badge/title reveal. Admin Tester remains excluded from rank promotions.
+
+PROFILE MODE + SHIP SKILL REFERENCE (2026-10-16)
+- Added a Player Profile screen accessible from the lobby for normal accounts; Admin Tester is excluded.
+- Profile displays player name, stable saved profile ID, account creation timestamp, rank and total EXP.
+- Profile card glow and rank title styling change with rank tier, with animated orbit/shimmer and gentle float effects.
+- Added favorite owned ship selector and animated ship showcase.
+- Added up to three selectable featured achievements; only claimed/unlocked achievements are eligible and selections save per account.
+- Added a full ship skill/cooldown reference to the Flight Manual for all ships.
+- Added metadata initialization for older accounts missing profile IDs or creation timestamps.
+- Validation: JavaScript syntax and ZIP integrity checked; full mobile gameplay not device-tested.
+
+PROFILE SCREEN HOTFIX
+- Added the missing profileScreen markup and all DOM elements required by renderPlayerProfile(), preventing a blank screen when opening Player Profile.
+- Moved Player Profile access to the top bar beside the coin balance and before the sound/settings controls; it is shown only in the lobby.
+- Removed the large lobby profile button to keep the lobby cleaner.
+- Constrained profile card and achievement selector panels on mobile so they occupy a compact portion of the viewport with internal scrolling instead of covering the entire screen.
+
+PLAYER PROFILE EDIT MODE UPDATE
+- Reworked the profile header into a compact PROFILE layout with player name first and ID beneath it.
+- Added a small top-right dropdown with Edit Profile and Copy ID actions.
+- Added selectable avatar icons and editable player display name.
+- Added three custom achievement display labels editable from Edit Profile; these are profile decorations and do not grant gameplay rewards.
+- Moved the owned favorite spaceship showcase to the lower-right area; ship rarity and profile glow continue to follow the player's rank/ship rarity.
+- Saved profile edits per account and made the profile card responsive for mobile.
+
+
+2026-10-18 — Enemy Logic / Weapon Spread / Deploy Reliability
+- Weapon Spread no longer contributes upgrade ATK; Weapon Core remains the damage upgrade.
+- Enemy HP scales from base HP: rounds 1–2 10%, 3–5 30%, 6–8 60%, round 9+ 100%.
+- Minion patterns mapped to seven classes: first four fixed-direction, last three aimed at a valid player position.
+- Deploy validates the selected ship and reports a clear account/ship error; music playback failure remains non-blocking.
+- Verified JavaScript syntax with Node.js. Actual Android/device gameplay still requires runtime testing.

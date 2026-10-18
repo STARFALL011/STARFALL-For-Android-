@@ -1,0 +1,34 @@
+# STARFALL — MUSIC CREDITS
+
+Music composed by **Oblidivm**.
+
+All tracks below are used under the Creative Commons Attribution 3.0 (CC BY 3.0) License.
+
+## 1. Lobby Music
+
+* **Track:** Brave Pilots (Menu Screen)
+* **Artist:** Oblidivm
+
+## 2. Gameplay Music
+
+* **Track:** Battle in the Stars
+* **Artist:** Oblidivm
+
+## 3. Boss Fight Music
+
+* **Track:** DeathMatch (Boss Theme)
+* **Artist:** Oblidivm
+
+## Original Source
+
+Space Shooter Music — OpenGameArt.org
+https://opengameart.org/content/space-shooter-music
+
+## License
+
+Creative Commons Attribution 3.0 (CC BY 3.0)
+https://creativecommons.org/licenses/by/3.0/
+
+Music copyright remains with its respective creator. StarFall does not claim ownership of these tracks.
+
+Game: StarFall

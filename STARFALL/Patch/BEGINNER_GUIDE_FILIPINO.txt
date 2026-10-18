@@ -1,0 +1,55 @@
+STARFALL ARCADE — BEGINNER CODE GUIDE
+====================================
+
+Ang project ay HTML + CSS + JavaScript. Puwede itong buksan at i-edit sa SPCK Editor.
+
+MAHAHALAGANG FILES
+------------------
+index.html
+  - Mga screen, button, canvas, at boss health bar markup.
+
+css/style.css
+  - Itsura ng menu, game UI, buttons, boss health bar, at layout.
+
+js/game.js
+  - Gameplay rules: player shooting, enemies, bosses, skills, upgrades, at saving.
+
+assets/user-assets/ships/
+  - Original spaceship PNG images. Huwag palitan ang filenames kung hindi mo rin
+    ia-update ang image path sa js/game.js.
+
+PAG-AJUST NG HIRAP NG KALABAN
+-----------------------------
+Buksan ang js/game.js at hanapin ang mga variable sa taas ng spawnEnemy():
+
+  const ENEMY_STARTING_HP = 8;
+  const ENEMY_HP_EVERY_FIVE_ROUNDS = 2;
+  const BOSS_STARTING_HP = 500;
+  const BOSS_HP_PER_ROUND = 45;
+
+Ano ang ibig sabihin?
+- ENEMY_STARTING_HP: health ng normal enemy sa mga unang rounds.
+- ENEMY_HP_EVERY_FIVE_ROUNDS: dagdag health kada limang round.
+- BOSS_STARTING_HP: panimulang health ng boss.
+- BOSS_HP_PER_ROUND: dagdag health ng boss batay sa round number.
+
+Halimbawa, kung gusto mong mas matibay pa ang normal enemies, palitan ang 8 ng 10.
+Kung masyadong mahirap ang boss, bawasan ang 45 sa 30.
+
+BOSS HEALTH BAR
+---------------
+Ang boss health bar ay nasa index.html, ang itsura ay nasa css/style.css,
+at ang kasalukuyang health numbers/bar percentage ay ina-update ng
+updateBossHealthBar() sa js/game.js.
+
+PAG-EDIT NANG LIGTAS
+--------------------
+1. Gumawa muna ng kopya ng project bago mag-edit.
+2. Baguhin ang isang value o function sa bawat pagkakataon.
+3. I-save at i-preview ang index.html sa SPCK.
+4. Kapag may error, tingnan ang spelling ng variable at panatilihin ang mga bracket
+   { }, parentheses ( ), at quotation marks.
+5. Huwag burahin ang assets/user-assets/ships/ dahil iyon ang original ship artwork.
+
+TIP: Ang basic bullets ay sadyang hindi instant-kill. Mas malakas pa rin dapat ang
+special skills, kaya puwedeng mas mabilis matalo ang kalaban kapag skill ang gamit.

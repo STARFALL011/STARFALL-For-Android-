@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#050817">
+<title>STARFALL: Infinite Assault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">✦</span><div><b>STARFALL</b><small>INFINITE ASSAULT</small></div></div>
+    <div class="top-actions"><span id="coinBadge">◈ 0</span><button id="topProfileBtn" class="icon-btn profile-top-btn" aria-label="Player Profile" title="Player Profile">◎</button><button id="soundBtn" class="icon-btn" aria-label="Toggle sound">♪</button><button id="pauseBtn" class="icon-btn" aria-label="Pause">Ⅱ</button><button id="topSettingsBtn" class="icon-btn" aria-label="Settings">⚙</button></div>
+  </header>
+  <main>
+    <section id="homeScreen" class="screen active main-menu-screen">
+      <div class="main-menu-stars" aria-hidden="true"></div>
+      <div class="main-menu-logo"><img src="assets/STARFALL_LOGO_TRANSPARENT.png" alt="STARFALL INFINITE ASSAULT logo"><span>INFINITE ASSAULT</span></div>
+      <div class="main-menu-actions">
+        <button id="lobbyBtn" class="primary wide">PLAY</button>
+        <button id="homeSettingsBtn" class="secondary wide">SETTINGS</button>
+        <button id="exitBtn" class="secondary wide">EXIT</button>
+        <button id="accountBtn" class="account-shortcut">PLAYER ACCOUNT</button>
+      </div>
+    </section>
+
+    <section id="lobbyScreen" class="screen"><div class="hero lobby-hero"><div class="lobby-heading"><div class="eyebrow">GALACTIC COMMAND CENTER</div><h2>YOUR <span>STARFIGHTER</span></h2><p id="lobbyShipCaption">Selected ship ready for deployment.</p></div><div class="lobby-ship-stage"><div class="lobby-orbit orbit-one"></div><div class="lobby-orbit orbit-two"></div><img id="lobbyShipAura" class="lobby-ship-aura hidden" alt="Always active Omega aura"><img id="lobbyShipImage" class="lobby-ship-image" src="assets/user-assets/ships/astra.png" alt="Selected player spaceship"><div class="lobby-ship-label"><small id="lobbyShipRarity">COMMON CLASS</small><b id="lobbyShipName">ASTRA</b></div></div><div id="rankSummary" class="rank-summary"><b>CADET</b><small>0 EXP</small></div><button id="playBtn" class="primary wide">▶ DEPLOY SHIP</button>
+        <div class="home-grid">
+          <button class="menu-card" data-screen="shopScreen"><span>▣</span><b>SHIP HANGAR</b><small>Buy & upgrade</small></button>
+          
+          <button class="menu-card" data-screen="howScreen"><span>⌁</span><b>FLIGHT MANUAL</b><small>How to play</small></button><button class="menu-card achievement-menu-card" data-screen="achievementsScreen"><span>🏆</span><b>ACHIEVEMENTS</b><i id="achievementRedDot" class="achievement-red-dot hidden" aria-label="Unclaimed achievements"></i><small>View milestones</small></button>
+        </div>
+        <p class="tiny">OFFLINE READY · PROGRESS SAVED ON THIS DEVICE</p><button id="logoutBtn" class="secondary wide">LOGOUT / BACK TO MAIN MENU</button></div></section>
+
+
+
+    <section id="gameScreen" class="screen game-screen">
+      <button id="gamePauseBtn" class="game-pause-btn" aria-label="Pause game" title="Pause">Ⅱ</button><div class="hud"><div><small>SCORE</small><b id="scoreText">000000</b></div><div><small>ROUND</small><b id="roundText">01</b></div><div class="health-hud"><small>HEALTH</small><div class="health-line"><div class="health-track"><i id="hpBar"></i></div><b id="hpText">100 / 100</b></div></div><div><small>COINS</small><b id="runCoins">0</b></div></div>
+      <canvas id="gameCanvas" width="420" height="760" aria-label="Space shooter game"></canvas><div id="joystick" class="joystick" aria-label="Movement joystick"><div id="joystickKnob" class="joystick-knob"></div></div>
+      <div id="bossBarWrap" class="boss-bar hidden"><div class="boss-bar-labels"><span id="bossName">BOSS</span><span id="bossHealthText">0 / 0 HP</span></div><div class="boss-bar-track"><i id="bossBar"></i></div></div>
+      <div class="game-controls"><button id="dashBtn"><span>WARP</span><i id="dashCooldown" class="cooldown-ring"></i></button><button id="ultimateBtn" class="ultimate-charge-btn" aria-label="Use stored Ultimate Laser"><span>✦</span><b id="ultimateCharges">0/2</b></button><button id="abilityBtn"><span id="abilityName">SKILL</span><small id="abilityCooldown"></small></button></div>
+      <div class="game-bottom"><span>DRAG TO MOVE · DOUBLE-TAP TO WARP · USE Ⅱ TO PAUSE</span></div>
+    </section>
+
+    <section id="shopScreen" class="screen">
+      <div class="section-head"><button class="backBtn">←</button><div><small>YOUR FLEET</small><h2>SHIP HANGAR</h2></div><span class="coin-inline" id="shopCoins">◈ 0</span></div>
+      <div class="ship-preview"><img id="previewAura" class="preview-aura hidden" alt="Omega aura"><img id="previewShip" src="assets/ship-player.svg" alt="Selected ship"><div><small id="shipClass">STARTER FIGHTER</small><h3 id="shipName">Astra</h3><p id="shipDesc">A reliable all-rounder.</p><b id="shipPrice">OWNED</b><div id="shipStats" class="ship-stats"></div><div class="ship-actions"><button id="shipUseBtn" class="buy-btn">USE</button><button id="shipPurchaseBtn" class="buy-btn">PURCHASE</button></div></div></div>
+      <div id="hangarPager" class="hangar-pager"></div><div id="shipList" class="ship-list"></div>
+      <h3 class="subhead">PERMANENT UPGRADES</h3>
+      <div class="upgrade-list">
+        <div class="upgrade-row"><div><b>Weapon Spread</b><small>Level <span id="gunLevel">1</span>/5 · bullet formation only; no ATK bonus; level 5 adds 2 helper ships</small><div class="meter" id="gunMeter"></div></div><div class="upgrade-actions"><button id="gunBuy" class="buy-btn">UPGRADE</button><button id="gunReset" class="reset-upgrade">RESET</button></div></div>
+        <div class="upgrade-row"><div><b>Defense</b><small>Level <span id="defenseLevel">1</span>/5 · reduces incoming damage by 1 per level</small><div class="meter" id="defenseMeter"></div></div><div class="upgrade-actions"><button id="defenseBuy" class="buy-btn">UPGRADE</button><button id="defenseReset" class="reset-upgrade">RESET</button></div></div>
+        <div class="upgrade-row"><div><b>Flight speed</b><small>Level <span id="speedLevel">1</span>/4 · +10% per upgrade (max +30%)</small><div class="meter" id="speedMeter"></div></div><div class="upgrade-actions"><button id="speedBuy" class="buy-btn">UPGRADE</button><button id="speedReset" class="reset-upgrade">RESET</button></div></div>
+        <div class="upgrade-row"><div><b>Fire rate</b><small><span id="rateValue">2</span> bullets/sec · max 6</small><div class="meter" id="rateMeter"></div></div><div class="upgrade-actions"><button id="rateBuy" class="buy-btn">UPGRADE</button><button id="rateReset" class="reset-upgrade">RESET</button></div></div>
+        <div class="upgrade-row"><div><b>Weapon Core</b><small>Level <span id="weaponLevel">1</span>/5 · +10 damage per upgrade</small><div class="meter" id="weaponMeter"></div></div><div class="upgrade-actions"><button id="weaponBuy" class="buy-btn">UPGRADE</button><button id="weaponReset" class="reset-upgrade">RESET</button></div></div>
+        <div class="upgrade-row power-up-upgrade"><div><b>Power-Up Duration</b><small>Level <span id="powerUpLevel">0</span>/4 · Each upgrade adds +1 second to Shield, Rapid Fire, and Speed Boost</small><div class="meter" id="powerUpMeter"></div></div><div class="upgrade-actions"><button id="powerUpBuy" class="buy-btn">UPGRADE</button><button id="powerUpReset" class="reset-upgrade">RESET</button></div></div>
+      </div>
+      <h3 class="subhead">DAILY MISSIONS & ACHIEVEMENTS</h3>
+      <div class="settings-card mission-card"><p class="muted">Progress is saved locally. Missions refresh by device date.</p><div id="missionSummary"></div><div class="achievement-note">🏆 Achievements grant bonus coins automatically. Unlock more by defeating enemies and bosses.</div></div>
+    </section>
+
+    <section id="accountScreen" class="screen">
+      <div class="section-head"><button class="backBtn">←</button><div><small>PLAYER PROFILE</small><h2>ACCOUNT</h2></div></div>
+      <div class="settings-card account-panel">
+        <p class="muted">Log in to a saved player account, or sign in as admin to access admin mode.</p>
+        <div class="create-account-form">
+          <label for="loginName">USERNAME</label><input id="loginName" type="text" maxlength="24" placeholder="Username" autocomplete="username">
+          <label for="loginPassword">PASSWORD</label><input id="loginPassword" type="password" placeholder="Password" autocomplete="current-password"><button id="toggleLoginPasswordBtn" type="button" class="password-toggle secondary">SHOW PASSWORD</button>
+          <button id="loginAccountBtn" class="primary wide">LOG IN</button>
+        </div>
+        <label>SAVED ACCOUNTS</label>
+        <div id="accountCards" class="account-cards"></div>
+        <select id="accountSelect" class="hidden" aria-hidden="true"><option value="">No saved accounts found</option></select>
+        <button id="loadSelectedAccountBtn" class="secondary wide">LOAD SELECTED ACCOUNT</button>
+        <div id="createAccountForm" class="create-account-form hidden">
+          <label for="accountName">NEW ACCOUNT NAME</label>
+          <input id="accountName" type="text" maxlength="24" placeholder="Enter account name" autocomplete="username">
+          <label for="accountPassword">PASSWORD (MIN. 6 CHARACTERS)</label>
+          <input id="accountPassword" type="password" minlength="6" placeholder="Create a password" autocomplete="new-password"><button id="toggleAccountPasswordBtn" type="button" class="password-toggle secondary">SHOW PASSWORD</button>
+          <button id="confirmCreateAccountBtn" class="primary wide">CREATE ACCOUNT · 300 COINS</button>
+          <button id="cancelCreateAccountBtn" class="secondary wide">CANCEL</button>
+        </div>
+        <button id="newAccountBtn" class="primary wide">＋ CREATE NEW ACCOUNT</button>
+        <button id="deleteAccountBtn" class="danger wide">DELETE SELECTED ACCOUNT</button>
+        <p id="accountStatus" class="muted">No active account. Log in or create a player account.</p>
+      </div>
+    </section>
+<section id="profileScreen" class="screen profile-screen">
+      <div class="profile-page-head"><button class="backBtn" aria-label="Back">←</button><h2>PROFILE</h2></div>
+      <div id="playerProfileCard" class="player-profile-card rank-level-1">
+        <div class="profile-card-top"><div class="profile-avatar-wrap"><div id="profileAvatar" class="profile-avatar">✦</div><small id="profileLocationText" class="profile-location-text">LOCATION NOT SET</small></div><div class="profile-identity-block"><div id="profileNameText" class="profile-player-name">PLAYER NAME</div><div class="profile-id-inline"><span>ID</span><b id="profileIdText">SF-000000</b></div><div id="profileLocationInline" class="profile-location-inline">Location not set</div><div id="profileCreatedText" class="profile-created">CREATED —</div><div class="profile-rank-inline"><span>RANK</span><b id="profileRankText" class="profile-rank-title">CADET</b><span id="profileExpText" class="profile-exp-text">0 EXP</span></div></div><button id="profileMenuBtn" class="profile-menu-btn" aria-label="Profile options" aria-expanded="false">▾</button></div>
+        <div id="profileMenu" class="profile-menu hidden"><button id="editProfileBtn" type="button">✎ EDIT PROFILE</button><button id="copyProfileIdBtn" type="button">▣ COPY ID</button></div>
+        <div class="profile-bottom-row"><div class="profile-custom-achievements"><b>FEATURED ACHIEVEMENTS</b><div id="profileFeaturedAchievements" class="profile-featured-achievements"></div></div><div id="profileFavoriteEditor" class="profile-favorite profile-favorite-editor"><div class="favorite-ship-display"><label>FAVORITE SHIP</label><div id="favoriteShipShowcase" class="favorite-ship-showcase"></div></div><div class="favorite-ship-edit"><label for="favoriteShipSelect">CHANGE FAVORITE · OWNED</label><select id="favoriteShipSelect"></select></div></div></div>
+      </div>
+      <div id="profileEditPanel" class="settings-card profile-edit-panel hidden"><div class="profile-edit-head"><h3>EDIT PROFILE</h3><button id="closeProfileEditBtn" class="secondary" type="button">DONE</button></div><label>PROFILE AVATAR</label><div id="profileAvatarChoices" class="profile-avatar-choices"><button type="button" data-avatar="✦">✦</button><button type="button" data-avatar="🚀">🚀</button><button type="button" data-avatar="☄️">☄️</button><button type="button" data-avatar="🌙">🌙</button><button type="button" data-avatar="⚡">⚡</button><button type="button" data-avatar="🪐">🪐</button></div><label for="profileGalleryInput" class="profile-gallery-label">▣ CHOOSE PHOTO FROM GALLERY</label><input id="profileGalleryInput" class="hidden" type="file" accept="image/*"><p class="muted">Your photo is center-cropped to a square avatar.</p><label for="profileNameInput">PLAYER NAME</label><input id="profileNameInput" maxlength="24" autocomplete="off" placeholder="Player name"><label>PROFILE LOCATION</label><p id="profileLocationEditText" class="muted">Location has not been set.</p><button id="profileUseGpsBtn" class="secondary wide" type="button">⌖ CHANGE LOCATION (GPS)</button><label>FEATURED ACHIEVEMENTS · UP TO 3</label><p class="muted">Choose only achievements you have already claimed.</p><div id="profileAchievementChoices" class="profile-achievement-choices"></div><button id="saveProfileEditsBtn" class="primary wide" type="button">SAVE PROFILE</button></div>
+    </section>
+<section id="achievementsScreen" class="screen"><div class="section-head"><button class="backBtn">←</button><div><small>CAREER MILESTONES</small><h2>ACHIEVEMENTS</h2></div><span id="achievementCount" class="coin-inline">0 / 14</span></div><div id="achievementList" class="achievement-list"></div></section>
+    <section id="settingsScreen" class="screen">
+      <div class="section-head"><button class="backBtn">←</button><div><small>MAKE IT YOURS</small><h2>SETTINGS</h2></div></div>
+      <div class="settings-card"><label for="bgSelect">GALAXY DESTINATION</label><select id="bgSelect"><option value="space1">Azure Drift — Pale Blue</option><option value="space2">Violet Nebula — Deep Violet</option><option value="space3">Andromeda Reach — Blue Galaxy</option><option value="space4">Crimson Rift — Red Space</option><option value="space5">Rosefire Expanse — Pink Galaxy</option></select><div class="bg-swatches"><button data-bg="space1" class="swatch blue" aria-label="Space background"></button><button data-bg="space2" class="swatch ember" aria-label="Space background"></button><button data-bg="space3" class="swatch violet" aria-label="Space background"></button><button data-bg="space4" class="swatch emerald" aria-label="Space background"></button><button data-bg="space5" class="swatch violet" aria-label="Space 5 Galaxy background"></button></div></div>
+      <div class="settings-card"><label for="controlSize">TOUCH CONTROL SIZE</label><select id="controlSize"><option value="compact">Compact</option><option value="normal">Normal</option><option value="large">Large</option></select><p class="muted">Choose button size for your phone or tablet.</p></div>
+      <div class="settings-card"><label for="musicVolume">MUSIC VOLUME</label><input id="musicVolume" type="range" min="0" max="100" value="22"><label for="sfxVolume">SFX VOLUME</label><input id="sfxVolume" type="range" min="0" max="100" value="50"></div><div class="settings-card"><div class="setting-line"><div><b>Screen shake</b><small>Impact feedback during combat</small></div><input type="checkbox" id="shakeToggle" checked></div><div class="setting-line"><div><b>Auto-fire</b><small>Ship fires while in combat</small></div><input type="checkbox" id="autoToggle" checked></div><div class="setting-line"><div><b>Sound effects</b><small>Simple synthesized effects</small></div><input type="checkbox" id="soundToggle" checked></div><div class="setting-line"><div><b>Virtual joystick</b><small>Turn off to use touch-to-move</small></div><input type="checkbox" id="joystickToggle" checked></div></div>
+      <div class="settings-card"><b>LOCAL SAVE</b><p class="muted">Your coins, ships, upgrades, and settings are stored in this browser on this device.</p><button id="exportBtn" class="secondary">EXPORT BACKUP</button><label class="file-label">IMPORT BACKUP<input id="importFile" type="file" accept="application/json"></label><button id="resetBtn" class="danger">RESET ALL PROGRESS</button></div>
+    </section>
+
+    <section id="howScreen" class="screen">
+      <div class="section-head"><button class="backBtn">←</button><div><small>QUICK BRIEFING</small><h2>FLIGHT MANUAL</h2></div></div>
+      <div class="settings-card manual"><h3>CONTROLS</h3><p>Touch and drag anywhere inside the playfield to move your ship both up/down and left/right to dodge bullets. Your ship auto-fires when enabled.</p><h3>POWER-UPS</h3>
+      <p><em class="gold">◈ COIN MAGNET</em> — Activates for 12 seconds, attracts all coin pickups anywhere in the canvas to the player, and shows a gold vertical duration meter on the left. Other boosts are not collected.</p>
+      <p><em class="green">✚ HEALTH</em> — Restores exactly 1 heart, up to the ship's maximum health.</p>
+      <p><em class="cyan">⬡ SHIELD</em> — Protects the ship from damage for 4 seconds. A vertical shield timer appears along the left side of the playfield and counts down.</p>
+      <p><em class="purple">» SPEED BOOST</em> — Doubles the selected ship's current movement speed (+100%) for 5 seconds.</p>
+      <p><em class="orange">✦ RAPID FIRE</em> — Doubles the ship's normal firing rate (+100%) for 6 seconds, respecting the game's fire-rate cap.</p>
+      <p><em class="gold">✹ ULTIMATE LASER</em> — Fires a bright, glowing yellow screen-clearing laser from the bottom toward the top. It clears all regular enemies and enemy projectiles on screen; collectible power-ups remain untouched. Bosses are also destroyed for their normal bonus reward.</p>
+      <h3>EPIC, LEGENDARY & OMEGA SKILLS</h3>
+      <p><em class="cyan">❄ VOID FREEZE</em> — Freezes enemies and chains through up to 3 nearby enemies with a bouncing energy strike. Cooldown: 17 seconds.</p>
+      <p><em class="cyan">✧ HELIX BEAM</em> — Piercing beam skill. Cooldown: 8 seconds.</p>
+      <p><em class="purple">🚀 POLAR FIELD</em> — Launches 8 fast homing rockets. Cooldown: 14 seconds.</p>
+      <p><em class="purple">🕳 GRIM BARRAGE</em> — Deploys a rift directly in front of the player, 40% of the playfield height away, and follows the ship while pulling enemies inward.</p>
+      <p><em class="gold">☄ CELESTIAL RAIN</em> — Calls down a multi-lane beam strike with a visible remaining-duration indicator.</p>
+      <p><em class="purple">◉ EVENT HORIZON</em> — Keeps its black hole in front of the ship at a distance of 20% of the playfield height, following the player.</p>
+      <p><em class="cyan">✦ AETHERION CATACLYSM</em> — Formerly Omega Protocol; activates the Omega ship's multi-lane beam, shield, rapid fire, and aura.</p>
+      <p><em class="gold">🔥 PHOENIX REBIRTH</em> — Restores full 3-heart HP and triggers blue-flame rapid fire. Cooldown: 30 seconds.</p>
+      <p><em class="red">☄ CRIMSON SINGULARITY</em> — Creates a singularity 20% of the playfield height in front of the player and follows while pulling for 3 seconds. It then detonates in a large red explosion wave, clearing enemies and hostile projectiles across the canvas while leaving power-ups untouched.</p>
+      <p><em class="red">⚡ BLOODLINE ERASURE</em> — A crimson laser follows the ship for 6 seconds; the remaining duration is shown on screen.</p>
+      <p><em class="red">🚀 RED DOMINION</em> — Summons 5 rotating escort ships that fire homing rockets once per second for 15 seconds. Cooldown: 30 seconds.</p>
+<h3>SHIP SKILL COOLDOWNS</h3><p class="muted">Cooldown reference for every ship skill. The timer starts after activating the skill.</p><div id="allShipSkillInfo" class="all-ship-skill-info"></div><h3>BOSSES</h3><p>A boss arrives every 10 rounds. Dodge the attack patterns and keep firing. Every boss gives bonus coins.</p><h3>INFINITE MODE</h3><p>There is no final round. Enemies gain health and become more aggressive as your run continues.</p></div>
+    </section>
+
+    <section id="resultScreen" class="screen result-screen"><div class="result-panel"><div class="eyebrow">RUN COMPLETE</div><h2>SHIP DESTROYED</h2><div class="result-stat"><span>FINAL SCORE</span><b id="finalScore">0</b></div><div class="result-stat"><span>ROUND REACHED</span><b id="finalRound">1</b></div><div class="result-stat"><span>COINS EARNED</span><b id="finalCoins">0</b></div><div class="result-stat"><span>EXPERIENCE EARNED</span><b id="finalRP">+0 EXP</b></div><div class="result-stat"><span>CURRENT RANK</span><b id="finalRank">CADET</b></div><button id="retryBtn" class="primary wide">↻ FLY AGAIN</button><button id="resultHomeBtn" class="secondary wide">BACK TO LOBBY</button></div></section>
+  </main>
+  <div id="toast" class="toast"></div>
+  <div id="pauseModal" class="modal hidden"><div class="modal-box"><div class="eyebrow">FLIGHT PAUSED</div><h2>TAKE A BREATHER</h2><button id="resumeBtn" class="primary wide">RESUME</button><button id="pauseExitBtn" class="secondary wide">EXIT RUN</button></div></div>
+<div id="rankUpModal" class="modal rank-up-modal hidden" role="dialog" aria-modal="true" aria-labelledby="rankUpTitle"><div class="modal-box rank-up-box"><div class="eyebrow">STARFALL PROMOTION</div><div id="rankUpBadge" class="rank-up-badge rank-level-1">✦</div><p id="rankUpSubtitle" class="rank-up-subtitle">RANK UP! YOUR EXPERIENCE IS FULL</p><h2 id="rankUpTitle" class="rank-up-title rank-level-1">CADET</h2><div class="rank-up-exp"><span>TOTAL EXPERIENCE</span><b id="rankUpExp">500 EXP</b></div><div class="rank-up-meter"><i></i></div><button id="rankUpContinue" class="primary wide">REVEAL NEW RANK</button></div></div>
+</div>
+<script src="js/game.js"></script>
+</body></html>

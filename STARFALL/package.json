@@ -1,0 +1,20 @@
+{
+  "name": "starfall-infinite-assault",
+  "version": "1.0.0",
+  "private": true,
+  "description": "STARFALL: Infinite Assault HTML5 game packaged for Android with Capacitor.",
+  "scripts": {
+    "build:web": "node scripts/prepare-web.js",
+    "android:init": "cap add android",
+    "android:sync": "npm run build:web && cap sync android",
+    "android:build": "npm run android:sync && cd android && gradlew.bat assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.1",
+    "@capacitor/core": "^6.2.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.1",
+    "@capacitor/assets": "^2.0.5"
+  }
+}

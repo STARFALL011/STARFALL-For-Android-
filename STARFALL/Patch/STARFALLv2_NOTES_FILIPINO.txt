@@ -1,0 +1,9 @@
+STARFALL v2 — MGA PAGBABAGO
+
+1. Pinalitan ang active ship artwork at space backgrounds gamit ang bagong Asset.zip.
+2. Idinagdag ang bagong minion/enemy at boss sprites sa gameplay.
+3. Hiwalay ang player shots sa enemy/boss shots: ang bala ng player ay para sa kalaban, at ang bala ng kalaban ay para sa player lamang.
+4. Iba ang hugis/kulay ng projectile ng kalaban para madaling makilala habang naglalaro.
+5. Panatilihin ang folder structure; buksan ang STARFALL/index.html sa SPCK Editor o browser.
+
+Paalala: Subukan sa mismong phone/browser ang touch controls at gameplay balancing dahil hindi kayang i-emulate ng ZIP build ang lahat ng device behavior.
