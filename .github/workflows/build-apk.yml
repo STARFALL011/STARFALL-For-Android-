@@ -2,18 +2,22 @@
 name: Build STARFALL APK
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
-      - master
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  build:
+  build-apk:
+    name: Build Android APK
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -25,7 +29,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
+          java-version: '17'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v4
@@ -34,7 +38,7 @@ jobs:
 
       - name: Install Android SDK packages
         run: |
-          sdkmanager --licenses
+          yes | sdkmanager --licenses
           sdkmanager --install \
             "platform-tools" \
             "platforms;android-35" \
@@ -43,26 +47,23 @@ jobs:
       - name: Install project dependencies
         run: npm install
 
-      - name: Build web assets
-        run: npm run build
+      - name: Prepare game web assets
+        run: npm run build:web
 
-      - name: Verify Capacitor
-        run: npx cap --version
+      - name: Generate Android project
+        run: npx cap add android
 
-      - name: Generate Android project if missing
-        run: |
-          if [ ! -d android ]; then
-            npx cap add android
-          fi
+      - name: Generate Android launcher icons
+        run: npx capacitor-assets generate --android
 
-      - name: Sync Capacitor Android
+      - name: Sync game into Android project
         run: npx cap sync android
 
       - name: Build debug APK
+        working-directory: android
         run: |
-          cd android
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon
+          ./gradlew --no-daemon assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
@@ -70,4 +71,4 @@ jobs:
           name: STARFALL-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
-          retention-days: 7
+          retention-days: 14
