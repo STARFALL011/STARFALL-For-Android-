@@ -1,3 +1,4 @@
+
 {
   "name": "starfall-infinite-assault",
   "version": "1.0.0",
@@ -7,7 +8,7 @@
     "build:web": "node scripts/prepare-web.js",
     "android:init": "cap add android",
     "android:sync": "npm run build:web && cap sync android",
-    "android:build": "npm run android:sync && cd android && gradlew.bat assembleDebug"
+    "android:build": "npm run android:sync && cd android && gradle assembleDebug"
   },
   "dependencies": {
     "@capacitor/android": "^6.2.1",
@@ -15,6 +16,6 @@
   },
   "devDependencies": {
     "@capacitor/cli": "^6.2.1",
-    "@capacitor/assets": "^2.0.5"
+    "@capacitor/assets": "^3.0.5"
   }
 }
