@@ -2,70 +2,102 @@
 name: Build STARFALL APK
 
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
 
 permissions:
   contents: read
 
 jobs:
   build-apk:
-    name: Build Android APK
+    name: Build STARFALL Android APK
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      # 1. Checkout repository
+      - name: Checkout source
         uses: actions/checkout@v4
 
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # 3. Setup Java
       - name: Setup Java 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
 
+      # 4. Setup Android SDK
       - name: Setup Android SDK
         uses: android-actions/setup-android@v4
         with:
           packages: 'platform-tools'
 
+      # 5. Install Android SDK packages
       - name: Install Android SDK packages
         run: |
-          yes | sdkmanager --licenses
+          yes | sdkmanager --licenses || true
           sdkmanager --install \
             "platform-tools" \
             "platforms;android-35" \
             "build-tools;35.0.0"
 
+      # 6. Install Node dependencies
       - name: Install project dependencies
         run: npm install
 
-      - name: Prepare game web assets
+      # 7. Prepare STARFALL web assets
+      - name: Build web assets
         run: npm run build:web
 
+      # 8. Generate Android project if missing
       - name: Generate Android project
-        run: npx cap add android
+        run: |
+          if [ ! -d android ]; then
+            npx cap add android
+          fi
 
-      - name: Generate Android launcher icons
+      # 9. Generate launcher icons
+      - name: Generate launcher icons
         run: npx capacitor-assets generate --android
+        continue-on-error: true
 
-      - name: Sync game into Android project
+      # 10. Sync Capacitor
+      - name: Sync Capacitor Android
         run: npx cap sync android
 
+      # 11. Fix missing launcher background resource
+      - name: Fix launcher background resource
+        run: |
+          mkdir -p android/app/src/main/res/values
+
+          cat > android/app/src/main/res/values/ic_launcher_background.xml <<'EOF'
+          <?xml version="1.0" encoding="utf-8"?>
+          <resources>
+              <color name="ic_launcher_background">#101010</color>
+          </resources>
+          EOF
+
+          find android/app/src/main/res -type f -name "*.xml" \
+            -exec sed -i \
+            's|@mipmap/ic_launcher_background|@color/ic_launcher_background|g' {} +
+
+      # 12. Build debug APK
       - name: Build debug APK
         working-directory: android
         run: |
           chmod +x gradlew
           ./gradlew --no-daemon assembleDebug
 
-      - name: Upload APK artifact
+      # 13. Upload APK
+      - name: Upload STARFALL APK
         uses: actions/upload-artifact@v4
         with:
           name: STARFALL-debug-apk
